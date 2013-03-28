@@ -1124,6 +1124,9 @@ class ShoppingModelProductJsonV1 {
   /** Google Internal. */
   num internal15;
 
+  /** Google Internal. Attribute names are deliberately vague. */
+  ShoppingModelProductJsonV1Internal16 internal16;
+
   /** Google Internal. */
   String internal3;
 
@@ -1248,6 +1251,9 @@ class ShoppingModelProductJsonV1 {
     }
     if (json.containsKey("internal15")) {
       internal15 = json["internal15"];
+    }
+    if (json.containsKey("internal16")) {
+      internal16 = new ShoppingModelProductJsonV1Internal16.fromJson(json["internal16"]);
     }
     if (json.containsKey("internal3")) {
       internal3 = json["internal3"];
@@ -1392,6 +1398,9 @@ class ShoppingModelProductJsonV1 {
     }
     if (internal15 != null) {
       output["internal15"] = internal15;
+    }
+    if (internal16 != null) {
+      output["internal16"] = internal16.toJson();
     }
     if (internal3 != null) {
       output["internal3"] = internal3;
@@ -1660,57 +1669,30 @@ class ShoppingModelProductJsonV1Inventories {
 
 }
 
-class ShoppingModelProductJsonV1Attributes {
+class ShoppingModelProductJsonV1Variants {
 
-  /** Display Name of prodct attribute. */
-  String displayName;
+  /** The detailed offer data for a particular variant offer. */
+  ShoppingModelProductJsonV1 variant;
 
-  /** Name of product attribute. */
-  String name;
-
-  /** Type of product attribute (one of: text, bool, int, float, dateRange, url). */
-  String type;
-
-  /** Unit of product attribute. */
-  String unit;
-
-  /** Create new ShoppingModelProductJsonV1Attributes from JSON data */
-  ShoppingModelProductJsonV1Attributes.fromJson(Map json) {
-    if (json.containsKey("displayName")) {
-      displayName = json["displayName"];
-    }
-    if (json.containsKey("name")) {
-      name = json["name"];
-    }
-    if (json.containsKey("type")) {
-      type = json["type"];
-    }
-    if (json.containsKey("unit")) {
-      unit = json["unit"];
+  /** Create new ShoppingModelProductJsonV1Variants from JSON data */
+  ShoppingModelProductJsonV1Variants.fromJson(Map json) {
+    if (json.containsKey("variant")) {
+      variant = new ShoppingModelProductJsonV1.fromJson(json["variant"]);
     }
   }
 
-  /** Create JSON Object for ShoppingModelProductJsonV1Attributes */
+  /** Create JSON Object for ShoppingModelProductJsonV1Variants */
   Map toJson() {
     var output = new Map();
 
-    if (displayName != null) {
-      output["displayName"] = displayName;
-    }
-    if (name != null) {
-      output["name"] = name;
-    }
-    if (type != null) {
-      output["type"] = type;
-    }
-    if (unit != null) {
-      output["unit"] = unit;
+    if (variant != null) {
+      output["variant"] = variant.toJson();
     }
 
     return output;
   }
 
-  /** Return String representation of ShoppingModelProductJsonV1Attributes */
+  /** Return String representation of ShoppingModelProductJsonV1Variants */
   String toString() => JSON.stringify(this.toJson());
 
 }
@@ -1820,30 +1802,57 @@ class ShoppingModelProductJsonV1ImagesThumbnails {
 
 }
 
-class ShoppingModelProductJsonV1Variants {
+class ShoppingModelProductJsonV1Attributes {
 
-  /** The detailed offer data for a particular variant offer. */
-  ShoppingModelProductJsonV1 variant;
+  /** Display Name of prodct attribute. */
+  String displayName;
 
-  /** Create new ShoppingModelProductJsonV1Variants from JSON data */
-  ShoppingModelProductJsonV1Variants.fromJson(Map json) {
-    if (json.containsKey("variant")) {
-      variant = new ShoppingModelProductJsonV1.fromJson(json["variant"]);
+  /** Name of product attribute. */
+  String name;
+
+  /** Type of product attribute (one of: text, bool, int, float, dateRange, url). */
+  String type;
+
+  /** Unit of product attribute. */
+  String unit;
+
+  /** Create new ShoppingModelProductJsonV1Attributes from JSON data */
+  ShoppingModelProductJsonV1Attributes.fromJson(Map json) {
+    if (json.containsKey("displayName")) {
+      displayName = json["displayName"];
+    }
+    if (json.containsKey("name")) {
+      name = json["name"];
+    }
+    if (json.containsKey("type")) {
+      type = json["type"];
+    }
+    if (json.containsKey("unit")) {
+      unit = json["unit"];
     }
   }
 
-  /** Create JSON Object for ShoppingModelProductJsonV1Variants */
+  /** Create JSON Object for ShoppingModelProductJsonV1Attributes */
   Map toJson() {
     var output = new Map();
 
-    if (variant != null) {
-      output["variant"] = variant.toJson();
+    if (displayName != null) {
+      output["displayName"] = displayName;
+    }
+    if (name != null) {
+      output["name"] = name;
+    }
+    if (type != null) {
+      output["type"] = type;
+    }
+    if (unit != null) {
+      output["unit"] = unit;
     }
 
     return output;
   }
 
-  /** Return String representation of ShoppingModelProductJsonV1Variants */
+  /** Return String representation of ShoppingModelProductJsonV1Attributes */
   String toString() => JSON.stringify(this.toJson());
 
 }
@@ -1881,6 +1890,47 @@ class ShoppingModelProductJsonV1Internal4 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal4 */
+  String toString() => JSON.stringify(this.toJson());
+
+}
+
+/** Google Internal. Attribute names are deliberately vague. */
+class ShoppingModelProductJsonV1Internal16 {
+  int length;
+  int number;
+  String size;
+
+  /** Create new ShoppingModelProductJsonV1Internal16 from JSON data */
+  ShoppingModelProductJsonV1Internal16.fromJson(Map json) {
+    if (json.containsKey("length")) {
+      length = json["length"];
+    }
+    if (json.containsKey("number")) {
+      number = json["number"];
+    }
+    if (json.containsKey("size")) {
+      size = json["size"];
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1Internal16 */
+  Map toJson() {
+    var output = new Map();
+
+    if (length != null) {
+      output["length"] = length;
+    }
+    if (number != null) {
+      output["number"] = number;
+    }
+    if (size != null) {
+      output["size"] = size;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1Internal16 */
   String toString() => JSON.stringify(this.toJson());
 
 }
