@@ -3,31 +3,31 @@ part of shopping_v1_api_client;
 class Product {
 
   /** List of categories for product. */
-  List<ShoppingModelCategoryJsonV1> categories;
+  core.List<ShoppingModelCategoryJsonV1> categories;
 
   /** Google internal. */
   ShoppingModelDebugJsonV1 debug;
 
   /** Id of product. */
-  String id;
+  core.String id;
 
   /** The kind of item, always shopping#product. */
-  String kind;
+  core.String kind;
 
   /** Product. */
   ShoppingModelProductJsonV1 product;
 
   /** Recommendations for product. */
-  List<ShoppingModelRecommendationsJsonV1> recommendations;
+  core.List<ShoppingModelRecommendationsJsonV1> recommendations;
 
   /** Unique identifier for this request. */
-  String requestId;
+  core.String requestId;
 
   /** Self link of product when generated for a lookup request. Self link of product when generated for a search request. */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new Product from JSON data */
-  Product.fromJson(Map json) {
+  Product.fromJson(core.Map json) {
     if (json.containsKey("categories")) {
       categories = [];
       json["categories"].forEach((item) {
@@ -61,11 +61,11 @@ class Product {
   }
 
   /** Create JSON Object for Product */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (categories != null) {
-      output["categories"] = new List();
+      output["categories"] = new core.List();
       categories.forEach((item) {
         output["categories"].add(item.toJson());
       });
@@ -83,7 +83,7 @@ class Product {
       output["product"] = product.toJson();
     }
     if (recommendations != null) {
-      output["recommendations"] = new List();
+      output["recommendations"] = new core.List();
       recommendations.forEach((item) {
         output["recommendations"].add(item.toJson());
       });
@@ -99,80 +99,80 @@ class Product {
   }
 
   /** Return String representation of Product */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Products {
 
   /** List of categories. */
-  List<ShoppingModelCategoryJsonV1> categories;
+  core.List<ShoppingModelCategoryJsonV1> categories;
 
   /** Recommendations for category. */
-  List<ShoppingModelRecommendationsJsonV1> categoryRecommendations;
+  core.List<ShoppingModelRecommendationsJsonV1> categoryRecommendations;
 
   /** Current item count. */
-  int currentItemCount;
+  core.int currentItemCount;
 
   /** Google internal. */
   ShoppingModelDebugJsonV1 debug;
 
   /** Etag of feed. */
-  String etag;
+  core.String etag;
 
   /** List of extras. */
   ShoppingModelExtrasJsonV1 extras;
 
   /** List of facets. */
-  List<ProductsFacets> facets;
+  core.List<ProductsFacets> facets;
 
   /** Id of feed. */
-  String id;
+  core.String id;
 
   /** List of returned products. */
-  List<Product> items;
+  core.List<Product> items;
 
   /** Number of items per page of results. */
-  int itemsPerPage;
+  core.int itemsPerPage;
 
   /** The fixed string "shopping#products". The kind of feed returned. */
-  String kind;
+  core.String kind;
 
   /** Next link of feed. */
-  String nextLink;
+  core.String nextLink;
 
   /** Previous link of feed. */
-  String previousLink;
+  core.String previousLink;
 
   /** List of promotions. */
-  List<ProductsPromotions> promotions;
+  core.List<ProductsPromotions> promotions;
 
   /** Redirects. */
-  List<String> redirects;
+  core.List<core.String> redirects;
 
   /** Related queries. */
-  List<String> relatedQueries;
+  core.List<core.String> relatedQueries;
 
   /** Unique identifier for this request. */
-  String requestId;
+  core.String requestId;
 
   /** Self link of feed. */
-  String selfLink;
+  core.String selfLink;
 
   /** Spelling. */
   ProductsSpelling spelling;
 
   /** 1-based index of the first item in the search results. */
-  int startIndex;
+  core.int startIndex;
 
   /** List of returned stores. */
-  List<ProductsStores> stores;
+  core.List<ProductsStores> stores;
 
   /** Total number of search results. */
-  int totalItems;
+  core.int totalItems;
 
   /** Create new Products from JSON data */
-  Products.fromJson(Map json) {
+  Products.fromJson(core.Map json) {
     if (json.containsKey("categories")) {
       categories = [];
       json["categories"].forEach((item) {
@@ -266,17 +266,17 @@ class Products {
   }
 
   /** Create JSON Object for Products */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (categories != null) {
-      output["categories"] = new List();
+      output["categories"] = new core.List();
       categories.forEach((item) {
         output["categories"].add(item.toJson());
       });
     }
     if (categoryRecommendations != null) {
-      output["categoryRecommendations"] = new List();
+      output["categoryRecommendations"] = new core.List();
       categoryRecommendations.forEach((item) {
         output["categoryRecommendations"].add(item.toJson());
       });
@@ -294,7 +294,7 @@ class Products {
       output["extras"] = extras.toJson();
     }
     if (facets != null) {
-      output["facets"] = new List();
+      output["facets"] = new core.List();
       facets.forEach((item) {
         output["facets"].add(item.toJson());
       });
@@ -303,7 +303,7 @@ class Products {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -321,19 +321,19 @@ class Products {
       output["previousLink"] = previousLink;
     }
     if (promotions != null) {
-      output["promotions"] = new List();
+      output["promotions"] = new core.List();
       promotions.forEach((item) {
         output["promotions"].add(item.toJson());
       });
     }
     if (redirects != null) {
-      output["redirects"] = new List();
+      output["redirects"] = new core.List();
       redirects.forEach((item) {
         output["redirects"].add(item);
       });
     }
     if (relatedQueries != null) {
-      output["relatedQueries"] = new List();
+      output["relatedQueries"] = new core.List();
       relatedQueries.forEach((item) {
         output["relatedQueries"].add(item);
       });
@@ -351,7 +351,7 @@ class Products {
       output["startIndex"] = startIndex;
     }
     if (stores != null) {
-      output["stores"] = new List();
+      output["stores"] = new core.List();
       stores.forEach((item) {
         output["stores"].add(item.toJson());
       });
@@ -364,7 +364,7 @@ class Products {
   }
 
   /** Return String representation of Products */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -372,18 +372,18 @@ class Products {
 class ProductsSpelling {
 
   /** Suggestion for spelling. */
-  String suggestion;
+  core.String suggestion;
 
   /** Create new ProductsSpelling from JSON data */
-  ProductsSpelling.fromJson(Map json) {
+  ProductsSpelling.fromJson(core.Map json) {
     if (json.containsKey("suggestion")) {
       suggestion = json["suggestion"];
     }
   }
 
   /** Create JSON Object for ProductsSpelling */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (suggestion != null) {
       output["suggestion"] = suggestion;
@@ -393,35 +393,35 @@ class ProductsSpelling {
   }
 
   /** Return String representation of ProductsSpelling */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProductsFacets {
 
   /** List of Buckets within facet. */
-  List<ProductsFacetsBuckets> buckets;
+  core.List<ProductsFacetsBuckets> buckets;
 
   /** Number of products matching the query that have a value for the facet's property or attribute. */
-  int count;
+  core.int count;
 
   /** Display name of facet. */
-  String displayName;
+  core.String displayName;
 
   /** Name of the facet's attribute (omitted for property facets). */
-  String name;
+  core.String name;
 
   /** Property of facet (omitted for attribute facets). */
-  String property;
+  core.String property;
 
   /** Type of facet's attribute (omitted for property facets, one of: text, bool, int, float). */
-  String type;
+  core.String type;
 
   /** Unit of the facet's property or attribute (omitted if the facet's property or attribute has no unit). */
-  String unit;
+  core.String unit;
 
   /** Create new ProductsFacets from JSON data */
-  ProductsFacets.fromJson(Map json) {
+  ProductsFacets.fromJson(core.Map json) {
     if (json.containsKey("buckets")) {
       buckets = [];
       json["buckets"].forEach((item) {
@@ -449,11 +449,11 @@ class ProductsFacets {
   }
 
   /** Create JSON Object for ProductsFacets */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (buckets != null) {
-      output["buckets"] = new List();
+      output["buckets"] = new core.List();
       buckets.forEach((item) {
         output["buckets"].add(item.toJson());
       });
@@ -481,23 +481,23 @@ class ProductsFacets {
   }
 
   /** Return String representation of ProductsFacets */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProductsFacetsBuckets {
 
   /** Number of products matching the query that have a value for the facet's property or attribute that matches the bucket. */
-  int count;
+  core.int count;
 
   /** Whether the upper bound of the bucket is exclusive (omitted for value buckets or if the range has no upper bound). */
-  bool maxExclusive;
+  core.bool maxExclusive;
 
   /** Whether the lower bound of the bucket is exclusive (omitted for value buckets or if the range has no lower bound). */
-  bool minExclusive;
+  core.bool minExclusive;
 
   /** Create new ProductsFacetsBuckets from JSON data */
-  ProductsFacetsBuckets.fromJson(Map json) {
+  ProductsFacetsBuckets.fromJson(core.Map json) {
     if (json.containsKey("count")) {
       count = json["count"];
     }
@@ -510,8 +510,8 @@ class ProductsFacetsBuckets {
   }
 
   /** Create JSON Object for ProductsFacetsBuckets */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (count != null) {
       output["count"] = count;
@@ -527,35 +527,35 @@ class ProductsFacetsBuckets {
   }
 
   /** Return String representation of ProductsFacetsBuckets */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProductsStores {
 
   /** Address of store. */
-  String address;
+  core.String address;
 
   /** Location of store. */
-  String location;
+  core.String location;
 
   /** Name of merchant. */
-  String name;
+  core.String name;
 
   /** Merchant-supplied store code. */
-  String storeCode;
+  core.String storeCode;
 
   /** Id of store. */
-  String storeId;
+  core.String storeId;
 
   /** Name of store. */
-  String storeName;
+  core.String storeName;
 
   /** Telephone number of store. */
-  String telephone;
+  core.String telephone;
 
   /** Create new ProductsStores from JSON data */
-  ProductsStores.fromJson(Map json) {
+  ProductsStores.fromJson(core.Map json) {
     if (json.containsKey("address")) {
       address = json["address"];
     }
@@ -580,8 +580,8 @@ class ProductsStores {
   }
 
   /** Create JSON Object for ProductsStores */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (address != null) {
       output["address"] = address;
@@ -609,38 +609,38 @@ class ProductsStores {
   }
 
   /** Return String representation of ProductsStores */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProductsPromotions {
 
   /** List of custom fields of promotion. */
-  List<ProductsPromotionsCustomFields> customFields;
+  core.List<ProductsPromotionsCustomFields> customFields;
 
   /** Custom HTML of promotion (omitted if type is not custom). */
-  String customHtml;
+  core.String customHtml;
 
   /** Description of promotion (omitted if type is not standard). */
-  String description;
+  core.String description;
 
   /** Link to promotion (omitted if type is not standard). */
-  String destLink;
+  core.String destLink;
 
   /** Link to promotion image (omitted if type is not standard). */
-  String imageLink;
+  core.String imageLink;
 
   /** Name of promotion (omitted if type is not standard). */
-  String name;
+  core.String name;
 
   /** Product of promotion (omitted if type is not product). */
   ShoppingModelProductJsonV1 product;
 
   /** Type of promotion (one of: standard, product, custom). */
-  String type;
+  core.String type;
 
   /** Create new ProductsPromotions from JSON data */
-  ProductsPromotions.fromJson(Map json) {
+  ProductsPromotions.fromJson(core.Map json) {
     if (json.containsKey("customFields")) {
       customFields = [];
       json["customFields"].forEach((item) {
@@ -671,11 +671,11 @@ class ProductsPromotions {
   }
 
   /** Create JSON Object for ProductsPromotions */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (customFields != null) {
-      output["customFields"] = new List();
+      output["customFields"] = new core.List();
       customFields.forEach((item) {
         output["customFields"].add(item.toJson());
       });
@@ -706,20 +706,20 @@ class ProductsPromotions {
   }
 
   /** Return String representation of ProductsPromotions */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProductsPromotionsCustomFields {
 
   /** Name of field. */
-  String name;
+  core.String name;
 
   /** Value of field. */
-  String value;
+  core.String value;
 
   /** Create new ProductsPromotionsCustomFields from JSON data */
-  ProductsPromotionsCustomFields.fromJson(Map json) {
+  ProductsPromotionsCustomFields.fromJson(core.Map json) {
     if (json.containsKey("name")) {
       name = json["name"];
     }
@@ -729,8 +729,8 @@ class ProductsPromotionsCustomFields {
   }
 
   /** Create JSON Object for ProductsPromotionsCustomFields */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (name != null) {
       output["name"] = name;
@@ -743,26 +743,26 @@ class ProductsPromotionsCustomFields {
   }
 
   /** Return String representation of ProductsPromotionsCustomFields */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelCategoryJsonV1 {
 
   /** Id of category. */
-  String id;
+  core.String id;
 
   /** Ids of the parents of the category. */
-  List<String> parents;
+  core.List<core.String> parents;
 
   /** Short name of category. */
-  String shortName;
+  core.String shortName;
 
   /** URL of category. */
-  String url;
+  core.String url;
 
   /** Create new ShoppingModelCategoryJsonV1 from JSON data */
-  ShoppingModelCategoryJsonV1.fromJson(Map json) {
+  ShoppingModelCategoryJsonV1.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -781,14 +781,14 @@ class ShoppingModelCategoryJsonV1 {
   }
 
   /** Create JSON Object for ShoppingModelCategoryJsonV1 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (parents != null) {
-      output["parents"] = new List();
+      output["parents"] = new core.List();
       parents.forEach((item) {
         output["parents"].add(item);
       });
@@ -804,41 +804,41 @@ class ShoppingModelCategoryJsonV1 {
   }
 
   /** Return String representation of ShoppingModelCategoryJsonV1 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelDebugJsonV1 {
 
   /** Google internal */
-  List<ShoppingModelDebugJsonV1BackendTimes> backendTimes;
+  core.List<ShoppingModelDebugJsonV1BackendTimes> backendTimes;
 
   /** Google internal. */
-  String elapsedMillis;
+  core.String elapsedMillis;
 
   /** Google internal. */
-  String facetsRequest;
+  core.String facetsRequest;
 
   /** Google internal. */
-  String facetsResponse;
+  core.String facetsResponse;
 
   /** Google internal. */
-  String rdcResponse;
+  core.String rdcResponse;
 
   /** Google internal. */
-  String recommendedItemsRequest;
+  core.String recommendedItemsRequest;
 
   /** Google internal. */
-  String recommendedItemsResponse;
+  core.String recommendedItemsResponse;
 
   /** Google internal. */
-  String searchRequest;
+  core.String searchRequest;
 
   /** Google internal. */
-  String searchResponse;
+  core.String searchResponse;
 
   /** Create new ShoppingModelDebugJsonV1 from JSON data */
-  ShoppingModelDebugJsonV1.fromJson(Map json) {
+  ShoppingModelDebugJsonV1.fromJson(core.Map json) {
     if (json.containsKey("backendTimes")) {
       backendTimes = [];
       json["backendTimes"].forEach((item) {
@@ -872,11 +872,11 @@ class ShoppingModelDebugJsonV1 {
   }
 
   /** Create JSON Object for ShoppingModelDebugJsonV1 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (backendTimes != null) {
-      output["backendTimes"] = new List();
+      output["backendTimes"] = new core.List();
       backendTimes.forEach((item) {
         output["backendTimes"].add(item.toJson());
       });
@@ -910,26 +910,26 @@ class ShoppingModelDebugJsonV1 {
   }
 
   /** Return String representation of ShoppingModelDebugJsonV1 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelDebugJsonV1BackendTimes {
 
   /** Google internal */
-  String elapsedMillis;
+  core.String elapsedMillis;
 
   /** Google internal */
-  String hostName;
+  core.String hostName;
 
   /** Google internal */
-  String name;
+  core.String name;
 
   /** Google internal */
-  String serverMillis;
+  core.String serverMillis;
 
   /** Create new ShoppingModelDebugJsonV1BackendTimes from JSON data */
-  ShoppingModelDebugJsonV1BackendTimes.fromJson(Map json) {
+  ShoppingModelDebugJsonV1BackendTimes.fromJson(core.Map json) {
     if (json.containsKey("elapsedMillis")) {
       elapsedMillis = json["elapsedMillis"];
     }
@@ -945,8 +945,8 @@ class ShoppingModelDebugJsonV1BackendTimes {
   }
 
   /** Create JSON Object for ShoppingModelDebugJsonV1BackendTimes */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (elapsedMillis != null) {
       output["elapsedMillis"] = elapsedMillis;
@@ -965,18 +965,18 @@ class ShoppingModelDebugJsonV1BackendTimes {
   }
 
   /** Return String representation of ShoppingModelDebugJsonV1BackendTimes */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelExtrasJsonV1 {
-  List<ShoppingModelExtrasJsonV1FacetRules> facetRules;
+  core.List<ShoppingModelExtrasJsonV1FacetRules> facetRules;
 
   /** Names of boost (ranking) rules applicable to this search. */
-  List<ShoppingModelExtrasJsonV1RankingRules> rankingRules;
+  core.List<ShoppingModelExtrasJsonV1RankingRules> rankingRules;
 
   /** Create new ShoppingModelExtrasJsonV1 from JSON data */
-  ShoppingModelExtrasJsonV1.fromJson(Map json) {
+  ShoppingModelExtrasJsonV1.fromJson(core.Map json) {
     if (json.containsKey("facetRules")) {
       facetRules = [];
       json["facetRules"].forEach((item) {
@@ -992,17 +992,17 @@ class ShoppingModelExtrasJsonV1 {
   }
 
   /** Create JSON Object for ShoppingModelExtrasJsonV1 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (facetRules != null) {
-      output["facetRules"] = new List();
+      output["facetRules"] = new core.List();
       facetRules.forEach((item) {
         output["facetRules"].add(item.toJson());
       });
     }
     if (rankingRules != null) {
-      output["rankingRules"] = new List();
+      output["rankingRules"] = new core.List();
       rankingRules.forEach((item) {
         output["rankingRules"].add(item.toJson());
       });
@@ -1012,23 +1012,23 @@ class ShoppingModelExtrasJsonV1 {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelExtrasJsonV1FacetRules {
-  String name;
+  core.String name;
 
   /** Create new ShoppingModelExtrasJsonV1FacetRules from JSON data */
-  ShoppingModelExtrasJsonV1FacetRules.fromJson(Map json) {
+  ShoppingModelExtrasJsonV1FacetRules.fromJson(core.Map json) {
     if (json.containsKey("name")) {
       name = json["name"];
     }
   }
 
   /** Create JSON Object for ShoppingModelExtrasJsonV1FacetRules */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (name != null) {
       output["name"] = name;
@@ -1038,23 +1038,23 @@ class ShoppingModelExtrasJsonV1FacetRules {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1FacetRules */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelExtrasJsonV1RankingRules {
-  String name;
+  core.String name;
 
   /** Create new ShoppingModelExtrasJsonV1RankingRules from JSON data */
-  ShoppingModelExtrasJsonV1RankingRules.fromJson(Map json) {
+  ShoppingModelExtrasJsonV1RankingRules.fromJson(core.Map json) {
     if (json.containsKey("name")) {
       name = json["name"];
     }
   }
 
   /** Create JSON Object for ShoppingModelExtrasJsonV1RankingRules */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (name != null) {
       output["name"] = name;
@@ -1064,122 +1064,122 @@ class ShoppingModelExtrasJsonV1RankingRules {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1RankingRules */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1 {
 
   /** Attributes of product (available only with a cx source). */
-  List<ShoppingModelProductJsonV1Attributes> attributes;
+  core.List<ShoppingModelProductJsonV1Attributes> attributes;
 
   /** Author of product. */
   ShoppingModelProductJsonV1Author author;
 
   /** Brand of product. */
-  String brand;
+  core.String brand;
 
   /** Categories of product according to the selected taxonomy, omitted if no taxonomy is selected. */
-  List<String> categories;
+  core.List<core.String> categories;
 
   /** Condition of product (one of: new, refurbished, used). */
-  String condition;
+  core.String condition;
 
   /** ISO 3166 code of target country of product. */
-  String country;
+  core.String country;
 
   /** RFC 3339 formatted creation time and date of product. */
-  String creationTime;
+  core.String creationTime;
 
   /** Description of product. */
-  String description;
+  core.String description;
 
   /** Google id of product. */
-  String googleId;
+  core.String googleId;
 
   /** The first GTIN of the product. Deprecated in favor of "gtins". */
-  String gtin;
+  core.String gtin;
 
   /** List of all the product's GTINs (in GTIN-14 format). */
-  List<String> gtins;
+  core.List<core.String> gtins;
 
   /** Images of product. */
-  List<ShoppingModelProductJsonV1Images> images;
+  core.List<ShoppingModelProductJsonV1Images> images;
 
   /** Google Internal. */
-  List<String> internal1;
+  core.List<core.String> internal1;
 
   /** Google Internal. */
-  List<String> internal10;
+  core.List<core.String> internal10;
 
   /** Google Internal. */
-  String internal12;
+  core.String internal12;
 
   /** Google Internal. */
-  num internal13;
+  core.num internal13;
 
   /** Google Internal. */
-  num internal14;
+  core.num internal14;
 
   /** Google Internal. */
-  num internal15;
+  core.num internal15;
 
   /** Google Internal. Attribute names are deliberately vague. */
   ShoppingModelProductJsonV1Internal16 internal16;
 
   /** Google Internal. */
-  String internal3;
+  core.String internal3;
 
   /** Google Internal. */
-  List<ShoppingModelProductJsonV1Internal4> internal4;
+  core.List<ShoppingModelProductJsonV1Internal4> internal4;
 
   /** Google Internal. */
-  String internal6;
+  core.String internal6;
 
   /** Google Internal. */
-  bool internal7;
+  core.bool internal7;
 
   /** Google Internal. */
-  List<String> internal8;
+  core.List<core.String> internal8;
 
   /** Inventories of product. */
-  List<ShoppingModelProductJsonV1Inventories> inventories;
+  core.List<ShoppingModelProductJsonV1Inventories> inventories;
 
   /** BCP 47 language tag of language of product. */
-  String language;
+  core.String language;
 
   /** Link to product. */
-  String link;
+  core.String link;
 
   /** RFC 3339 formatted modification time and date of product. */
-  String modificationTime;
+  core.String modificationTime;
 
   /** List of all the product's MPNs. */
-  List<String> mpns;
+  core.List<core.String> mpns;
 
   /** Code to add to the page to render the +1 content. */
-  String plusOne;
+  core.String plusOne;
 
   /** Merchant-provided id of product (available only with a cx source). */
-  String providedId;
+  core.String providedId;
 
   /** Whether this product matched the user query. Only set for the variant offers (if any) attached to a product offer. */
-  bool queryMatched;
+  core.bool queryMatched;
 
   /** Google Internal */
-  num score;
+  core.num score;
 
   /** Title of product. */
-  String title;
+  core.String title;
 
   /** The number of variant offers returned that matched the query. */
-  int totalMatchingVariants;
+  core.int totalMatchingVariants;
 
   /** A list of variant offers associated with this product. */
-  List<ShoppingModelProductJsonV1Variants> variants;
+  core.List<ShoppingModelProductJsonV1Variants> variants;
 
   /** Create new ShoppingModelProductJsonV1 from JSON data */
-  ShoppingModelProductJsonV1.fromJson(Map json) {
+  ShoppingModelProductJsonV1.fromJson(core.Map json) {
     if (json.containsKey("attributes")) {
       attributes = [];
       json["attributes"].forEach((item) {
@@ -1324,11 +1324,11 @@ class ShoppingModelProductJsonV1 {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (attributes != null) {
-      output["attributes"] = new List();
+      output["attributes"] = new core.List();
       attributes.forEach((item) {
         output["attributes"].add(item.toJson());
       });
@@ -1340,7 +1340,7 @@ class ShoppingModelProductJsonV1 {
       output["brand"] = brand;
     }
     if (categories != null) {
-      output["categories"] = new List();
+      output["categories"] = new core.List();
       categories.forEach((item) {
         output["categories"].add(item);
       });
@@ -1364,25 +1364,25 @@ class ShoppingModelProductJsonV1 {
       output["gtin"] = gtin;
     }
     if (gtins != null) {
-      output["gtins"] = new List();
+      output["gtins"] = new core.List();
       gtins.forEach((item) {
         output["gtins"].add(item);
       });
     }
     if (images != null) {
-      output["images"] = new List();
+      output["images"] = new core.List();
       images.forEach((item) {
         output["images"].add(item.toJson());
       });
     }
     if (internal1 != null) {
-      output["internal1"] = new List();
+      output["internal1"] = new core.List();
       internal1.forEach((item) {
         output["internal1"].add(item);
       });
     }
     if (internal10 != null) {
-      output["internal10"] = new List();
+      output["internal10"] = new core.List();
       internal10.forEach((item) {
         output["internal10"].add(item);
       });
@@ -1406,7 +1406,7 @@ class ShoppingModelProductJsonV1 {
       output["internal3"] = internal3;
     }
     if (internal4 != null) {
-      output["internal4"] = new List();
+      output["internal4"] = new core.List();
       internal4.forEach((item) {
         output["internal4"].add(item.toJson());
       });
@@ -1418,13 +1418,13 @@ class ShoppingModelProductJsonV1 {
       output["internal7"] = internal7;
     }
     if (internal8 != null) {
-      output["internal8"] = new List();
+      output["internal8"] = new core.List();
       internal8.forEach((item) {
         output["internal8"].add(item);
       });
     }
     if (inventories != null) {
-      output["inventories"] = new List();
+      output["inventories"] = new core.List();
       inventories.forEach((item) {
         output["inventories"].add(item.toJson());
       });
@@ -1439,7 +1439,7 @@ class ShoppingModelProductJsonV1 {
       output["modificationTime"] = modificationTime;
     }
     if (mpns != null) {
-      output["mpns"] = new List();
+      output["mpns"] = new core.List();
       mpns.forEach((item) {
         output["mpns"].add(item);
       });
@@ -1463,7 +1463,7 @@ class ShoppingModelProductJsonV1 {
       output["totalMatchingVariants"] = totalMatchingVariants;
     }
     if (variants != null) {
-      output["variants"] = new List();
+      output["variants"] = new core.List();
       variants.forEach((item) {
         output["variants"].add(item.toJson());
       });
@@ -1473,7 +1473,7 @@ class ShoppingModelProductJsonV1 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1481,13 +1481,13 @@ class ShoppingModelProductJsonV1 {
 class ShoppingModelProductJsonV1Author {
 
   /** Account id of product author. */
-  String accountId;
+  core.String accountId;
 
   /** Name of product author. */
-  String name;
+  core.String name;
 
   /** Create new ShoppingModelProductJsonV1Author from JSON data */
-  ShoppingModelProductJsonV1Author.fromJson(Map json) {
+  ShoppingModelProductJsonV1Author.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
       accountId = json["accountId"];
     }
@@ -1497,8 +1497,8 @@ class ShoppingModelProductJsonV1Author {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Author */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accountId != null) {
       output["accountId"] = accountId;
@@ -1511,59 +1511,59 @@ class ShoppingModelProductJsonV1Author {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Author */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1Inventories {
 
   /** Availability of product inventory. */
-  String availability;
+  core.String availability;
 
   /** Channel of product inventory (one of: online, local). */
-  String channel;
+  core.String channel;
 
   /** Currency of product inventory (an ISO 4217 alphabetic code). */
-  String currency;
+  core.String currency;
 
   /** Distance of product inventory. */
-  num distance;
+  core.num distance;
 
   /** Distance unit of product inventory. */
-  String distanceUnit;
+  core.String distanceUnit;
 
   /** Number of months for installment price. */
-  int installmentMonths;
+  core.int installmentMonths;
 
   /** Installment price of product inventory. */
-  num installmentPrice;
+  core.num installmentPrice;
 
   /** Original price of product inventory. Only returned for products that are on sale. */
-  num originalPrice;
+  core.num originalPrice;
 
   /** Price of product inventory. */
-  num price;
+  core.num price;
 
   /** Sale end date. */
-  String saleEndDate;
+  core.String saleEndDate;
 
   /** Sale price of product inventory. */
-  num salePrice;
+  core.num salePrice;
 
   /** Sale start date. */
-  String saleStartDate;
+  core.String saleStartDate;
 
   /** Shipping cost of product inventory. */
-  num shipping;
+  core.num shipping;
 
   /** Store ID of product inventory. */
-  String storeId;
+  core.String storeId;
 
   /** Tax of product inventory. */
-  num tax;
+  core.num tax;
 
   /** Create new ShoppingModelProductJsonV1Inventories from JSON data */
-  ShoppingModelProductJsonV1Inventories.fromJson(Map json) {
+  ShoppingModelProductJsonV1Inventories.fromJson(core.Map json) {
     if (json.containsKey("availability")) {
       availability = json["availability"];
     }
@@ -1612,8 +1612,8 @@ class ShoppingModelProductJsonV1Inventories {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Inventories */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (availability != null) {
       output["availability"] = availability;
@@ -1665,7 +1665,7 @@ class ShoppingModelProductJsonV1Inventories {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Inventories */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1675,15 +1675,15 @@ class ShoppingModelProductJsonV1Variants {
   ShoppingModelProductJsonV1 variant;
 
   /** Create new ShoppingModelProductJsonV1Variants from JSON data */
-  ShoppingModelProductJsonV1Variants.fromJson(Map json) {
+  ShoppingModelProductJsonV1Variants.fromJson(core.Map json) {
     if (json.containsKey("variant")) {
       variant = new ShoppingModelProductJsonV1.fromJson(json["variant"]);
     }
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Variants */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (variant != null) {
       output["variant"] = variant.toJson();
@@ -1693,21 +1693,21 @@ class ShoppingModelProductJsonV1Variants {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Variants */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1Images {
 
   /** Link to product image. */
-  String link;
-  String status;
+  core.String link;
+  core.String status;
 
   /** Thumbnails of product image. */
-  List<ShoppingModelProductJsonV1ImagesThumbnails> thumbnails;
+  core.List<ShoppingModelProductJsonV1ImagesThumbnails> thumbnails;
 
   /** Create new ShoppingModelProductJsonV1Images from JSON data */
-  ShoppingModelProductJsonV1Images.fromJson(Map json) {
+  ShoppingModelProductJsonV1Images.fromJson(core.Map json) {
     if (json.containsKey("link")) {
       link = json["link"];
     }
@@ -1723,8 +1723,8 @@ class ShoppingModelProductJsonV1Images {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Images */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (link != null) {
       output["link"] = link;
@@ -1733,7 +1733,7 @@ class ShoppingModelProductJsonV1Images {
       output["status"] = status;
     }
     if (thumbnails != null) {
-      output["thumbnails"] = new List();
+      output["thumbnails"] = new core.List();
       thumbnails.forEach((item) {
         output["thumbnails"].add(item.toJson());
       });
@@ -1743,26 +1743,26 @@ class ShoppingModelProductJsonV1Images {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Images */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1ImagesThumbnails {
 
   /** Content of thumbnail (only available for the first thumbnail of the top results if SAYT is enabled). */
-  String content;
+  core.String content;
 
   /** Height of thumbnail (omitted if not specified in the request). */
-  int height;
+  core.int height;
 
   /** Link to thumbnail. */
-  String link;
+  core.String link;
 
   /** Width of thumbnail (omitted if not specified in the request). */
-  int width;
+  core.int width;
 
   /** Create new ShoppingModelProductJsonV1ImagesThumbnails from JSON data */
-  ShoppingModelProductJsonV1ImagesThumbnails.fromJson(Map json) {
+  ShoppingModelProductJsonV1ImagesThumbnails.fromJson(core.Map json) {
     if (json.containsKey("content")) {
       content = json["content"];
     }
@@ -1778,8 +1778,8 @@ class ShoppingModelProductJsonV1ImagesThumbnails {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1ImagesThumbnails */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (content != null) {
       output["content"] = content;
@@ -1798,26 +1798,26 @@ class ShoppingModelProductJsonV1ImagesThumbnails {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1ImagesThumbnails */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1Attributes {
 
   /** Display Name of prodct attribute. */
-  String displayName;
+  core.String displayName;
 
   /** Name of product attribute. */
-  String name;
+  core.String name;
 
   /** Type of product attribute (one of: text, bool, int, float, dateRange, url). */
-  String type;
+  core.String type;
 
   /** Unit of product attribute. */
-  String unit;
+  core.String unit;
 
   /** Create new ShoppingModelProductJsonV1Attributes from JSON data */
-  ShoppingModelProductJsonV1Attributes.fromJson(Map json) {
+  ShoppingModelProductJsonV1Attributes.fromJson(core.Map json) {
     if (json.containsKey("displayName")) {
       displayName = json["displayName"];
     }
@@ -1833,8 +1833,8 @@ class ShoppingModelProductJsonV1Attributes {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Attributes */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (displayName != null) {
       output["displayName"] = displayName;
@@ -1853,20 +1853,20 @@ class ShoppingModelProductJsonV1Attributes {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Attributes */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelProductJsonV1Internal4 {
 
   /** Google Internal. */
-  num confidence;
+  core.num confidence;
 
   /** Google Internal. */
-  int node;
+  core.int node;
 
   /** Create new ShoppingModelProductJsonV1Internal4 from JSON data */
-  ShoppingModelProductJsonV1Internal4.fromJson(Map json) {
+  ShoppingModelProductJsonV1Internal4.fromJson(core.Map json) {
     if (json.containsKey("confidence")) {
       confidence = json["confidence"];
     }
@@ -1876,8 +1876,8 @@ class ShoppingModelProductJsonV1Internal4 {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Internal4 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (confidence != null) {
       output["confidence"] = confidence;
@@ -1890,18 +1890,18 @@ class ShoppingModelProductJsonV1Internal4 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal4 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 /** Google Internal. Attribute names are deliberately vague. */
 class ShoppingModelProductJsonV1Internal16 {
-  int length;
-  int number;
-  String size;
+  core.int length;
+  core.int number;
+  core.String size;
 
   /** Create new ShoppingModelProductJsonV1Internal16 from JSON data */
-  ShoppingModelProductJsonV1Internal16.fromJson(Map json) {
+  ShoppingModelProductJsonV1Internal16.fromJson(core.Map json) {
     if (json.containsKey("length")) {
       length = json["length"];
     }
@@ -1914,8 +1914,8 @@ class ShoppingModelProductJsonV1Internal16 {
   }
 
   /** Create JSON Object for ShoppingModelProductJsonV1Internal16 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (length != null) {
       output["length"] = length;
@@ -1931,20 +1931,20 @@ class ShoppingModelProductJsonV1Internal16 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal16 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ShoppingModelRecommendationsJsonV1 {
 
   /** List of recommendations. */
-  List<ShoppingModelRecommendationsJsonV1RecommendationList> recommendationList;
+  core.List<ShoppingModelRecommendationsJsonV1RecommendationList> recommendationList;
 
   /** Type of recommendation list (for offer-based recommendations, one of: all, purchaseToPurchase, visitToVisit, visitToPurchase, relatedItems; for category-based recommendations, one of: all, categoryMostVisited, categoryBestSeller). */
-  String type;
+  core.String type;
 
   /** Create new ShoppingModelRecommendationsJsonV1 from JSON data */
-  ShoppingModelRecommendationsJsonV1.fromJson(Map json) {
+  ShoppingModelRecommendationsJsonV1.fromJson(core.Map json) {
     if (json.containsKey("recommendationList")) {
       recommendationList = [];
       json["recommendationList"].forEach((item) {
@@ -1957,11 +1957,11 @@ class ShoppingModelRecommendationsJsonV1 {
   }
 
   /** Create JSON Object for ShoppingModelRecommendationsJsonV1 */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (recommendationList != null) {
-      output["recommendationList"] = new List();
+      output["recommendationList"] = new core.List();
       recommendationList.forEach((item) {
         output["recommendationList"].add(item.toJson());
       });
@@ -1974,7 +1974,7 @@ class ShoppingModelRecommendationsJsonV1 {
   }
 
   /** Return String representation of ShoppingModelRecommendationsJsonV1 */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1984,15 +1984,15 @@ class ShoppingModelRecommendationsJsonV1RecommendationList {
   ShoppingModelProductJsonV1 product;
 
   /** Create new ShoppingModelRecommendationsJsonV1RecommendationList from JSON data */
-  ShoppingModelRecommendationsJsonV1RecommendationList.fromJson(Map json) {
+  ShoppingModelRecommendationsJsonV1RecommendationList.fromJson(core.Map json) {
     if (json.containsKey("product")) {
       product = new ShoppingModelProductJsonV1.fromJson(json["product"]);
     }
   }
 
   /** Create JSON Object for ShoppingModelRecommendationsJsonV1RecommendationList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (product != null) {
       output["product"] = product.toJson();
@@ -2002,7 +2002,7 @@ class ShoppingModelRecommendationsJsonV1RecommendationList {
   }
 
   /** Return String representation of ShoppingModelRecommendationsJsonV1RecommendationList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 

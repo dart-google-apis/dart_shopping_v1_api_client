@@ -44,13 +44,13 @@ class ProductsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Product> get(String source, int accountId, String productIdType, String productId, {String attributeFilter, bool categories_enabled, String categories_include, bool categories_useGcsConfig, String location, bool plusOne_enabled, String plusOne_styles, bool plusOne_useGcsConfig, bool recommendations_enabled, String recommendations_include, bool recommendations_useGcsConfig, String taxonomy, String thumbnails, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Product> get(core.String source, core.int accountId, core.String productIdType, core.String productId, {core.String attributeFilter, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String location, core.bool plusOne_enabled, core.String plusOne_styles, core.bool plusOne_useGcsConfig, core.bool recommendations_enabled, core.String recommendations_include, core.bool recommendations_useGcsConfig, core.String taxonomy, core.String thumbnails, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{source}/products/{accountId}/{productIdType}/{productId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (accountId == null) paramErrors.add("accountId is required");
     if (accountId != null) urlParams["accountId"] = accountId;
     if (attributeFilter != null) queryParams["attributeFilter"] = attributeFilter;
@@ -190,13 +190,13 @@ class ProductsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Products> list(String source, {String attributeFilter, String availability, String boostBy, bool categories_enabled, String categories_include, bool categories_useGcsConfig, String categoryRecommendations_category, bool categoryRecommendations_enabled, String categoryRecommendations_include, bool categoryRecommendations_useGcsConfig, String channels, bool clickTracking, String country, String crowdBy, String currency, bool extras_enabled, String extras_info, String facets_discover, bool facets_enabled, String facets_include, bool facets_includeEmptyBuckets, bool facets_useGcsConfig, String language, String location, int maxResults, int maxVariants, bool plusOne_enabled, String plusOne_styles, bool plusOne_useGcsConfig, bool promotions_enabled, bool promotions_useGcsConfig, String q, String rankBy, bool redirects_enabled, bool redirects_useGcsConfig, bool relatedQueries_enabled, bool relatedQueries_useGcsConfig, String restrictBy, bool safe, bool spelling_enabled, bool spelling_useGcsConfig, int startIndex, String taxonomy, String thumbnails, String useCase, Map optParams}) {
-    var completer = new Completer();
+  async.Future<Products> list(core.String source, {core.String attributeFilter, core.String availability, core.String boostBy, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String categoryRecommendations_category, core.bool categoryRecommendations_enabled, core.String categoryRecommendations_include, core.bool categoryRecommendations_useGcsConfig, core.String channels, core.bool clickTracking, core.String country, core.String crowdBy, core.String currency, core.bool extras_enabled, core.String extras_info, core.String facets_discover, core.bool facets_enabled, core.String facets_include, core.bool facets_includeEmptyBuckets, core.bool facets_useGcsConfig, core.String language, core.String location, core.int maxResults, core.int maxVariants, core.bool plusOne_enabled, core.String plusOne_styles, core.bool plusOne_useGcsConfig, core.bool promotions_enabled, core.bool promotions_useGcsConfig, core.String q, core.String rankBy, core.bool redirects_enabled, core.bool redirects_useGcsConfig, core.bool relatedQueries_enabled, core.bool relatedQueries_useGcsConfig, core.String restrictBy, core.bool safe, core.bool spelling_enabled, core.bool spelling_useGcsConfig, core.int startIndex, core.String taxonomy, core.String thumbnails, core.String useCase, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{source}/products";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (attributeFilter != null) queryParams["attributeFilter"] = attributeFilter;
     if (availability != null) queryParams["availability"] = availability;
     if (boostBy != null) queryParams["boostBy"] = boostBy;
