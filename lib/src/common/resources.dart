@@ -1,8 +1,8 @@
 part of shopping_v1_api_client;
 
-class ProductsResource extends Resource {
+class ProductsResource_ extends Resource {
 
-  ProductsResource(Client client) : super(client) {
+  ProductsResource_(Client client) : super(client) {
   }
 
   /**
@@ -81,7 +81,7 @@ class ProductsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -253,7 +253,7 @@ class ProductsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

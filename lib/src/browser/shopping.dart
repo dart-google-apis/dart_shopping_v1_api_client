@@ -4,8 +4,8 @@ part of shopping_v1_api_browser;
 /** Lets you search over product data. */
 class Shopping extends BrowserClient {
 
-  ProductsResource _products;
-  ProductsResource get products => _products;
+  ProductsResource_ _products;
+  ProductsResource_ get products => _products;
 
   /** OAuth Scope2: View your product data */
   static const core.String SHOPPINGAPI_SCOPE = "https://www.googleapis.com/auth/shoppingapi";
@@ -62,6 +62,6 @@ class Shopping extends BrowserClient {
   Shopping([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/shopping/search/v1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _products = new ProductsResource(this);
+    _products = new ProductsResource_(this);
   }
 }
