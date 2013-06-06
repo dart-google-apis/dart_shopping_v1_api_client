@@ -61,7 +61,7 @@ class Shopping extends ConsoleClient {
 
   Shopping([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/shopping/search/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _products = new ProductsResource_(this);
   }
 }

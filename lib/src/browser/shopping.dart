@@ -61,7 +61,7 @@ class Shopping extends BrowserClient {
 
   Shopping([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/shopping/search/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _products = new ProductsResource_(this);
   }
 }

@@ -814,7 +814,7 @@ class ShoppingModelDebugJsonV1 {
   core.List<ShoppingModelDebugJsonV1BackendTimes> backendTimes;
 
   /** Google internal. */
-  core.String elapsedMillis;
+  core.int elapsedMillis;
 
   /** Google internal. */
   core.String facetsRequest;
@@ -917,7 +917,7 @@ class ShoppingModelDebugJsonV1 {
 class ShoppingModelDebugJsonV1BackendTimes {
 
   /** Google internal */
-  core.String elapsedMillis;
+  core.int elapsedMillis;
 
   /** Google internal */
   core.String hostName;
@@ -926,7 +926,7 @@ class ShoppingModelDebugJsonV1BackendTimes {
   core.String name;
 
   /** Google internal */
-  core.String serverMillis;
+  core.int serverMillis;
 
   /** Create new ShoppingModelDebugJsonV1BackendTimes from JSON data */
   ShoppingModelDebugJsonV1BackendTimes.fromJson(core.Map json) {
@@ -1898,7 +1898,7 @@ class ShoppingModelProductJsonV1Internal4 {
 class ShoppingModelProductJsonV1Internal16 {
   core.int length;
   core.int number;
-  core.String size;
+  core.int size;
 
   /** Create new ShoppingModelProductJsonV1Internal16 from JSON data */
   ShoppingModelProductJsonV1Internal16.fromJson(core.Map json) {
