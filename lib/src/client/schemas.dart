@@ -846,7 +846,11 @@ class ShoppingModelDebugJsonV1 {
       });
     }
     if (json.containsKey("elapsedMillis")) {
-      elapsedMillis = json["elapsedMillis"];
+      if(json["elapsedMillis"] is core.String){
+        elapsedMillis = core.int.parse(json["elapsedMillis"]);
+      }else{
+        elapsedMillis = json["elapsedMillis"];
+      }
     }
     if (json.containsKey("facetsRequest")) {
       facetsRequest = json["facetsRequest"];
@@ -931,7 +935,11 @@ class ShoppingModelDebugJsonV1BackendTimes {
   /** Create new ShoppingModelDebugJsonV1BackendTimes from JSON data */
   ShoppingModelDebugJsonV1BackendTimes.fromJson(core.Map json) {
     if (json.containsKey("elapsedMillis")) {
-      elapsedMillis = json["elapsedMillis"];
+      if(json["elapsedMillis"] is core.String){
+        elapsedMillis = core.int.parse(json["elapsedMillis"]);
+      }else{
+        elapsedMillis = json["elapsedMillis"];
+      }
     }
     if (json.containsKey("hostName")) {
       hostName = json["hostName"];
@@ -940,7 +948,11 @@ class ShoppingModelDebugJsonV1BackendTimes {
       name = json["name"];
     }
     if (json.containsKey("serverMillis")) {
-      serverMillis = json["serverMillis"];
+      if(json["serverMillis"] is core.String){
+        serverMillis = core.int.parse(json["serverMillis"]);
+      }else{
+        serverMillis = json["serverMillis"];
+      }
     }
   }
 
@@ -1909,7 +1921,11 @@ class ShoppingModelProductJsonV1Internal16 {
       number = json["number"];
     }
     if (json.containsKey("size")) {
-      size = json["size"];
+      if(json["size"] is core.String){
+        size = core.int.parse(json["size"]);
+      }else{
+        size = json["size"];
+      }
     }
   }
 

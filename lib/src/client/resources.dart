@@ -26,12 +26,6 @@ class ProductsResource_ extends Resource {
    *
    * [location] - Location used to determine tax and shipping
    *
-   * [plusOne_enabled] - Whether to return +1 button code
-   *
-   * [plusOne_styles] - +1 button rendering styles
-   *
-   * [plusOne_useGcsConfig] - Whether to use +1 button styles configured in the GCS account
-   *
    * [recommendations_enabled] - Whether to return recommendation information
    *
    * [recommendations_include] - Recommendation specification
@@ -44,8 +38,7 @@ class ProductsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Product> get(core.String source, core.int accountId, core.String productIdType, core.String productId, {core.String attributeFilter, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String location, core.bool plusOne_enabled, core.String plusOne_styles, core.bool plusOne_useGcsConfig, core.bool recommendations_enabled, core.String recommendations_include, core.bool recommendations_useGcsConfig, core.String taxonomy, core.String thumbnails, core.Map optParams}) {
-    var completer = new async.Completer();
+  async.Future<Product> get(core.String source, core.int accountId, core.String productIdType, core.String productId, {core.String attributeFilter, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String location, core.bool recommendations_enabled, core.String recommendations_include, core.bool recommendations_useGcsConfig, core.String taxonomy, core.String thumbnails, core.Map optParams}) {
     var url = "{source}/products/{accountId}/{productIdType}/{productId}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -58,9 +51,6 @@ class ProductsResource_ extends Resource {
     if (categories_include != null) queryParams["categories.include"] = categories_include;
     if (categories_useGcsConfig != null) queryParams["categories.useGcsConfig"] = categories_useGcsConfig;
     if (location != null) queryParams["location"] = location;
-    if (plusOne_enabled != null) queryParams["plusOne.enabled"] = plusOne_enabled;
-    if (plusOne_styles != null) queryParams["plusOne.styles"] = plusOne_styles;
-    if (plusOne_useGcsConfig != null) queryParams["plusOne.useGcsConfig"] = plusOne_useGcsConfig;
     if (productId == null) paramErrors.add("productId is required");
     if (productId != null) urlParams["productId"] = productId;
     if (productIdType == null) paramErrors.add("productIdType is required");
@@ -81,16 +71,13 @@ class ProductsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Product.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Product.fromJson(data));
   }
 
   /**
@@ -150,12 +137,6 @@ class ProductsResource_ extends Resource {
    *
    * [maxVariants] - Maximum number of variant results to return per result
    *
-   * [plusOne_enabled] - Whether to return +1 button code
-   *
-   * [plusOne_styles] - +1 button rendering styles
-   *
-   * [plusOne_useGcsConfig] - Whether to use +1 button styles configured in the GCS account
-   *
    * [promotions_enabled] - Whether to return promotion information
    *
    * [promotions_useGcsConfig] - Whether to return promotion information as configured in the GCS account
@@ -190,8 +171,7 @@ class ProductsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Products> list(core.String source, {core.String attributeFilter, core.String availability, core.String boostBy, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String categoryRecommendations_category, core.bool categoryRecommendations_enabled, core.String categoryRecommendations_include, core.bool categoryRecommendations_useGcsConfig, core.String channels, core.bool clickTracking, core.String country, core.String crowdBy, core.String currency, core.bool extras_enabled, core.String extras_info, core.String facets_discover, core.bool facets_enabled, core.String facets_include, core.bool facets_includeEmptyBuckets, core.bool facets_useGcsConfig, core.String language, core.String location, core.int maxResults, core.int maxVariants, core.bool plusOne_enabled, core.String plusOne_styles, core.bool plusOne_useGcsConfig, core.bool promotions_enabled, core.bool promotions_useGcsConfig, core.String q, core.String rankBy, core.bool redirects_enabled, core.bool redirects_useGcsConfig, core.bool relatedQueries_enabled, core.bool relatedQueries_useGcsConfig, core.String restrictBy, core.bool safe, core.bool spelling_enabled, core.bool spelling_useGcsConfig, core.int startIndex, core.String taxonomy, core.String thumbnails, core.String useCase, core.Map optParams}) {
-    var completer = new async.Completer();
+  async.Future<Products> list(core.String source, {core.String attributeFilter, core.String availability, core.String boostBy, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String categoryRecommendations_category, core.bool categoryRecommendations_enabled, core.String categoryRecommendations_include, core.bool categoryRecommendations_useGcsConfig, core.String channels, core.bool clickTracking, core.String country, core.String crowdBy, core.String currency, core.bool extras_enabled, core.String extras_info, core.String facets_discover, core.bool facets_enabled, core.String facets_include, core.bool facets_includeEmptyBuckets, core.bool facets_useGcsConfig, core.String language, core.String location, core.int maxResults, core.int maxVariants, core.bool promotions_enabled, core.bool promotions_useGcsConfig, core.String q, core.String rankBy, core.bool redirects_enabled, core.bool redirects_useGcsConfig, core.bool relatedQueries_enabled, core.bool relatedQueries_useGcsConfig, core.String restrictBy, core.bool safe, core.bool spelling_enabled, core.bool spelling_useGcsConfig, core.int startIndex, core.String taxonomy, core.String thumbnails, core.String useCase, core.Map optParams}) {
     var url = "{source}/products";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -223,9 +203,6 @@ class ProductsResource_ extends Resource {
     if (location != null) queryParams["location"] = location;
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (maxVariants != null) queryParams["maxVariants"] = maxVariants;
-    if (plusOne_enabled != null) queryParams["plusOne.enabled"] = plusOne_enabled;
-    if (plusOne_styles != null) queryParams["plusOne.styles"] = plusOne_styles;
-    if (plusOne_useGcsConfig != null) queryParams["plusOne.useGcsConfig"] = plusOne_useGcsConfig;
     if (promotions_enabled != null) queryParams["promotions.enabled"] = promotions_enabled;
     if (promotions_useGcsConfig != null) queryParams["promotions.useGcsConfig"] = promotions_useGcsConfig;
     if (q != null) queryParams["q"] = q;
@@ -253,16 +230,13 @@ class ProductsResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Products.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Products.fromJson(data));
   }
 }
 
