@@ -1,14 +1,17 @@
-library shopping_v1_api_browser;
+library shopping_v1_api.browser;
 
-import "shopping_v1_api_client.dart";
-export "shopping_v1_api_client.dart";
-
-import "dart:core" as core;
-import "dart:html" as html;
-import "dart:async" as async;
-import "dart:json" as JSON;
-import "package:js/js.dart" as js;
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-part "src/browser/browser_client.dart";
-part "src/browser/shopping.dart";
+import 'package:google_shopping_v1_api/src/cloud_api_browser.dart';
+import "package:google_shopping_v1_api/shopping_v1_api_client.dart";
+
+/** Lets you search over product data. */
+class Shopping extends Client with BrowserClient {
+
+  /** OAuth Scope2: View your product data */
+  static const String SHOPPINGAPI_SCOPE = "https://www.googleapis.com/auth/shoppingapi";
+
+  final oauth.OAuth2 auth;
+
+  Shopping([oauth.OAuth2 this.auth]);
+}

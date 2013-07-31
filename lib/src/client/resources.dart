@@ -1,9 +1,11 @@
-part of shopping_v1_api_client;
+part of shopping_v1_api;
 
-class ProductsResource_ extends Resource {
+class ProductsResource_ {
 
-  ProductsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ProductsResource_(Client client) :
+      _client = client;
 
   /**
    * Returns a single product

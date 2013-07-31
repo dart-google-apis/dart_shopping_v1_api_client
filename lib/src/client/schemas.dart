@@ -1,4 +1,4 @@
-part of shopping_v1_api_client;
+part of shopping_v1_api;
 
 class Product {
 
@@ -29,10 +29,7 @@ class Product {
   /** Create new Product from JSON data */
   Product.fromJson(core.Map json) {
     if (json.containsKey("categories")) {
-      categories = [];
-      json["categories"].forEach((item) {
-        categories.add(new ShoppingModelCategoryJsonV1.fromJson(item));
-      });
+      categories = json["categories"].map((categoriesItem) => new ShoppingModelCategoryJsonV1.fromJson(categoriesItem)).toList();
     }
     if (json.containsKey("debug")) {
       debug = new ShoppingModelDebugJsonV1.fromJson(json["debug"]);
@@ -47,10 +44,7 @@ class Product {
       product = new ShoppingModelProductJsonV1.fromJson(json["product"]);
     }
     if (json.containsKey("recommendations")) {
-      recommendations = [];
-      json["recommendations"].forEach((item) {
-        recommendations.add(new ShoppingModelRecommendationsJsonV1.fromJson(item));
-      });
+      recommendations = json["recommendations"].map((recommendationsItem) => new ShoppingModelRecommendationsJsonV1.fromJson(recommendationsItem)).toList();
     }
     if (json.containsKey("requestId")) {
       requestId = json["requestId"];
@@ -65,10 +59,7 @@ class Product {
     var output = new core.Map();
 
     if (categories != null) {
-      output["categories"] = new core.List();
-      categories.forEach((item) {
-        output["categories"].add(item.toJson());
-      });
+      output["categories"] = categories.map((categoriesItem) => categoriesItem.toJson()).toList();
     }
     if (debug != null) {
       output["debug"] = debug.toJson();
@@ -83,10 +74,7 @@ class Product {
       output["product"] = product.toJson();
     }
     if (recommendations != null) {
-      output["recommendations"] = new core.List();
-      recommendations.forEach((item) {
-        output["recommendations"].add(item.toJson());
-      });
+      output["recommendations"] = recommendations.map((recommendationsItem) => recommendationsItem.toJson()).toList();
     }
     if (requestId != null) {
       output["requestId"] = requestId;
@@ -174,16 +162,10 @@ class Products {
   /** Create new Products from JSON data */
   Products.fromJson(core.Map json) {
     if (json.containsKey("categories")) {
-      categories = [];
-      json["categories"].forEach((item) {
-        categories.add(new ShoppingModelCategoryJsonV1.fromJson(item));
-      });
+      categories = json["categories"].map((categoriesItem) => new ShoppingModelCategoryJsonV1.fromJson(categoriesItem)).toList();
     }
     if (json.containsKey("categoryRecommendations")) {
-      categoryRecommendations = [];
-      json["categoryRecommendations"].forEach((item) {
-        categoryRecommendations.add(new ShoppingModelRecommendationsJsonV1.fromJson(item));
-      });
+      categoryRecommendations = json["categoryRecommendations"].map((categoryRecommendationsItem) => new ShoppingModelRecommendationsJsonV1.fromJson(categoryRecommendationsItem)).toList();
     }
     if (json.containsKey("currentItemCount")) {
       currentItemCount = json["currentItemCount"];
@@ -198,19 +180,13 @@ class Products {
       extras = new ShoppingModelExtrasJsonV1.fromJson(json["extras"]);
     }
     if (json.containsKey("facets")) {
-      facets = [];
-      json["facets"].forEach((item) {
-        facets.add(new ProductsFacets.fromJson(item));
-      });
+      facets = json["facets"].map((facetsItem) => new ProductsFacets.fromJson(facetsItem)).toList();
     }
     if (json.containsKey("id")) {
       id = json["id"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Product.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Product.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("itemsPerPage")) {
       itemsPerPage = json["itemsPerPage"];
@@ -225,22 +201,13 @@ class Products {
       previousLink = json["previousLink"];
     }
     if (json.containsKey("promotions")) {
-      promotions = [];
-      json["promotions"].forEach((item) {
-        promotions.add(new ProductsPromotions.fromJson(item));
-      });
+      promotions = json["promotions"].map((promotionsItem) => new ProductsPromotions.fromJson(promotionsItem)).toList();
     }
     if (json.containsKey("redirects")) {
-      redirects = [];
-      json["redirects"].forEach((item) {
-        redirects.add(item);
-      });
+      redirects = json["redirects"].toList();
     }
     if (json.containsKey("relatedQueries")) {
-      relatedQueries = [];
-      json["relatedQueries"].forEach((item) {
-        relatedQueries.add(item);
-      });
+      relatedQueries = json["relatedQueries"].toList();
     }
     if (json.containsKey("requestId")) {
       requestId = json["requestId"];
@@ -255,10 +222,7 @@ class Products {
       startIndex = json["startIndex"];
     }
     if (json.containsKey("stores")) {
-      stores = [];
-      json["stores"].forEach((item) {
-        stores.add(new ProductsStores.fromJson(item));
-      });
+      stores = json["stores"].map((storesItem) => new ProductsStores.fromJson(storesItem)).toList();
     }
     if (json.containsKey("totalItems")) {
       totalItems = json["totalItems"];
@@ -270,16 +234,10 @@ class Products {
     var output = new core.Map();
 
     if (categories != null) {
-      output["categories"] = new core.List();
-      categories.forEach((item) {
-        output["categories"].add(item.toJson());
-      });
+      output["categories"] = categories.map((categoriesItem) => categoriesItem.toJson()).toList();
     }
     if (categoryRecommendations != null) {
-      output["categoryRecommendations"] = new core.List();
-      categoryRecommendations.forEach((item) {
-        output["categoryRecommendations"].add(item.toJson());
-      });
+      output["categoryRecommendations"] = categoryRecommendations.map((categoryRecommendationsItem) => categoryRecommendationsItem.toJson()).toList();
     }
     if (currentItemCount != null) {
       output["currentItemCount"] = currentItemCount;
@@ -294,19 +252,13 @@ class Products {
       output["extras"] = extras.toJson();
     }
     if (facets != null) {
-      output["facets"] = new core.List();
-      facets.forEach((item) {
-        output["facets"].add(item.toJson());
-      });
+      output["facets"] = facets.map((facetsItem) => facetsItem.toJson()).toList();
     }
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (itemsPerPage != null) {
       output["itemsPerPage"] = itemsPerPage;
@@ -321,22 +273,13 @@ class Products {
       output["previousLink"] = previousLink;
     }
     if (promotions != null) {
-      output["promotions"] = new core.List();
-      promotions.forEach((item) {
-        output["promotions"].add(item.toJson());
-      });
+      output["promotions"] = promotions.map((promotionsItem) => promotionsItem.toJson()).toList();
     }
     if (redirects != null) {
-      output["redirects"] = new core.List();
-      redirects.forEach((item) {
-        output["redirects"].add(item);
-      });
+      output["redirects"] = redirects.toList();
     }
     if (relatedQueries != null) {
-      output["relatedQueries"] = new core.List();
-      relatedQueries.forEach((item) {
-        output["relatedQueries"].add(item);
-      });
+      output["relatedQueries"] = relatedQueries.toList();
     }
     if (requestId != null) {
       output["requestId"] = requestId;
@@ -351,10 +294,7 @@ class Products {
       output["startIndex"] = startIndex;
     }
     if (stores != null) {
-      output["stores"] = new core.List();
-      stores.forEach((item) {
-        output["stores"].add(item.toJson());
-      });
+      output["stores"] = stores.map((storesItem) => storesItem.toJson()).toList();
     }
     if (totalItems != null) {
       output["totalItems"] = totalItems;
@@ -364,35 +304,6 @@ class Products {
   }
 
   /** Return String representation of Products */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** Spelling. */
-class ProductsSpelling {
-
-  /** Suggestion for spelling. */
-  core.String suggestion;
-
-  /** Create new ProductsSpelling from JSON data */
-  ProductsSpelling.fromJson(core.Map json) {
-    if (json.containsKey("suggestion")) {
-      suggestion = json["suggestion"];
-    }
-  }
-
-  /** Create JSON Object for ProductsSpelling */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (suggestion != null) {
-      output["suggestion"] = suggestion;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ProductsSpelling */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -423,10 +334,7 @@ class ProductsFacets {
   /** Create new ProductsFacets from JSON data */
   ProductsFacets.fromJson(core.Map json) {
     if (json.containsKey("buckets")) {
-      buckets = [];
-      json["buckets"].forEach((item) {
-        buckets.add(new ProductsFacetsBuckets.fromJson(item));
-      });
+      buckets = json["buckets"].map((bucketsItem) => new ProductsFacetsBuckets.fromJson(bucketsItem)).toList();
     }
     if (json.containsKey("count")) {
       count = json["count"];
@@ -453,10 +361,7 @@ class ProductsFacets {
     var output = new core.Map();
 
     if (buckets != null) {
-      output["buckets"] = new core.List();
-      buckets.forEach((item) {
-        output["buckets"].add(item.toJson());
-      });
+      output["buckets"] = buckets.map((bucketsItem) => bucketsItem.toJson()).toList();
     }
     if (count != null) {
       output["count"] = count;
@@ -490,22 +395,40 @@ class ProductsFacetsBuckets {
   /** Number of products matching the query that have a value for the facet's property or attribute that matches the bucket. */
   core.int count;
 
+  /** Upper bound of the bucket (omitted for value buckets or if the range has no upper bound). */
+  core.Object max;
+
   /** Whether the upper bound of the bucket is exclusive (omitted for value buckets or if the range has no upper bound). */
   core.bool maxExclusive;
 
+  /** Lower bound of the bucket (omitted for value buckets or if the range has no lower bound). */
+  core.Object min;
+
   /** Whether the lower bound of the bucket is exclusive (omitted for value buckets or if the range has no lower bound). */
   core.bool minExclusive;
+
+  /** Value of the bucket (omitted for range buckets). */
+  core.Object value;
 
   /** Create new ProductsFacetsBuckets from JSON data */
   ProductsFacetsBuckets.fromJson(core.Map json) {
     if (json.containsKey("count")) {
       count = json["count"];
     }
+    if (json.containsKey("max")) {
+      max = json["max"];
+    }
     if (json.containsKey("maxExclusive")) {
       maxExclusive = json["maxExclusive"];
     }
+    if (json.containsKey("min")) {
+      min = json["min"];
+    }
     if (json.containsKey("minExclusive")) {
       minExclusive = json["minExclusive"];
+    }
+    if (json.containsKey("value")) {
+      value = json["value"];
     }
   }
 
@@ -516,17 +439,183 @@ class ProductsFacetsBuckets {
     if (count != null) {
       output["count"] = count;
     }
+    if (max != null) {
+      output["max"] = max;
+    }
     if (maxExclusive != null) {
       output["maxExclusive"] = maxExclusive;
     }
+    if (min != null) {
+      output["min"] = min;
+    }
     if (minExclusive != null) {
       output["minExclusive"] = minExclusive;
+    }
+    if (value != null) {
+      output["value"] = value;
     }
 
     return output;
   }
 
   /** Return String representation of ProductsFacetsBuckets */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ProductsPromotions {
+
+  /** List of custom fields of promotion. */
+  core.List<ProductsPromotionsCustomFields> customFields;
+
+  /** Custom HTML of promotion (omitted if type is not custom). */
+  core.String customHtml;
+
+  /** Description of promotion (omitted if type is not standard). */
+  core.String description;
+
+  /** Link to promotion (omitted if type is not standard). */
+  core.String destLink;
+
+  /** Link to promotion image (omitted if type is not standard). */
+  core.String imageLink;
+
+  /** Name of promotion (omitted if type is not standard). */
+  core.String name;
+
+  /** Product of promotion (omitted if type is not product). */
+  ShoppingModelProductJsonV1 product;
+
+  /** Type of promotion (one of: standard, product, custom). */
+  core.String type;
+
+  /** Create new ProductsPromotions from JSON data */
+  ProductsPromotions.fromJson(core.Map json) {
+    if (json.containsKey("customFields")) {
+      customFields = json["customFields"].map((customFieldsItem) => new ProductsPromotionsCustomFields.fromJson(customFieldsItem)).toList();
+    }
+    if (json.containsKey("customHtml")) {
+      customHtml = json["customHtml"];
+    }
+    if (json.containsKey("description")) {
+      description = json["description"];
+    }
+    if (json.containsKey("destLink")) {
+      destLink = json["destLink"];
+    }
+    if (json.containsKey("imageLink")) {
+      imageLink = json["imageLink"];
+    }
+    if (json.containsKey("name")) {
+      name = json["name"];
+    }
+    if (json.containsKey("product")) {
+      product = new ShoppingModelProductJsonV1.fromJson(json["product"]);
+    }
+    if (json.containsKey("type")) {
+      type = json["type"];
+    }
+  }
+
+  /** Create JSON Object for ProductsPromotions */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (customFields != null) {
+      output["customFields"] = customFields.map((customFieldsItem) => customFieldsItem.toJson()).toList();
+    }
+    if (customHtml != null) {
+      output["customHtml"] = customHtml;
+    }
+    if (description != null) {
+      output["description"] = description;
+    }
+    if (destLink != null) {
+      output["destLink"] = destLink;
+    }
+    if (imageLink != null) {
+      output["imageLink"] = imageLink;
+    }
+    if (name != null) {
+      output["name"] = name;
+    }
+    if (product != null) {
+      output["product"] = product.toJson();
+    }
+    if (type != null) {
+      output["type"] = type;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ProductsPromotions */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ProductsPromotionsCustomFields {
+
+  /** Name of field. */
+  core.String name;
+
+  /** Value of field. */
+  core.String value;
+
+  /** Create new ProductsPromotionsCustomFields from JSON data */
+  ProductsPromotionsCustomFields.fromJson(core.Map json) {
+    if (json.containsKey("name")) {
+      name = json["name"];
+    }
+    if (json.containsKey("value")) {
+      value = json["value"];
+    }
+  }
+
+  /** Create JSON Object for ProductsPromotionsCustomFields */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (name != null) {
+      output["name"] = name;
+    }
+    if (value != null) {
+      output["value"] = value;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ProductsPromotionsCustomFields */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+/** Spelling. */
+class ProductsSpelling {
+
+  /** Suggestion for spelling. */
+  core.String suggestion;
+
+  /** Create new ProductsSpelling from JSON data */
+  ProductsSpelling.fromJson(core.Map json) {
+    if (json.containsKey("suggestion")) {
+      suggestion = json["suggestion"];
+    }
+  }
+
+  /** Create JSON Object for ProductsSpelling */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (suggestion != null) {
+      output["suggestion"] = suggestion;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ProductsSpelling */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -613,140 +702,6 @@ class ProductsStores {
 
 }
 
-class ProductsPromotions {
-
-  /** List of custom fields of promotion. */
-  core.List<ProductsPromotionsCustomFields> customFields;
-
-  /** Custom HTML of promotion (omitted if type is not custom). */
-  core.String customHtml;
-
-  /** Description of promotion (omitted if type is not standard). */
-  core.String description;
-
-  /** Link to promotion (omitted if type is not standard). */
-  core.String destLink;
-
-  /** Link to promotion image (omitted if type is not standard). */
-  core.String imageLink;
-
-  /** Name of promotion (omitted if type is not standard). */
-  core.String name;
-
-  /** Product of promotion (omitted if type is not product). */
-  ShoppingModelProductJsonV1 product;
-
-  /** Type of promotion (one of: standard, product, custom). */
-  core.String type;
-
-  /** Create new ProductsPromotions from JSON data */
-  ProductsPromotions.fromJson(core.Map json) {
-    if (json.containsKey("customFields")) {
-      customFields = [];
-      json["customFields"].forEach((item) {
-        customFields.add(new ProductsPromotionsCustomFields.fromJson(item));
-      });
-    }
-    if (json.containsKey("customHtml")) {
-      customHtml = json["customHtml"];
-    }
-    if (json.containsKey("description")) {
-      description = json["description"];
-    }
-    if (json.containsKey("destLink")) {
-      destLink = json["destLink"];
-    }
-    if (json.containsKey("imageLink")) {
-      imageLink = json["imageLink"];
-    }
-    if (json.containsKey("name")) {
-      name = json["name"];
-    }
-    if (json.containsKey("product")) {
-      product = new ShoppingModelProductJsonV1.fromJson(json["product"]);
-    }
-    if (json.containsKey("type")) {
-      type = json["type"];
-    }
-  }
-
-  /** Create JSON Object for ProductsPromotions */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (customFields != null) {
-      output["customFields"] = new core.List();
-      customFields.forEach((item) {
-        output["customFields"].add(item.toJson());
-      });
-    }
-    if (customHtml != null) {
-      output["customHtml"] = customHtml;
-    }
-    if (description != null) {
-      output["description"] = description;
-    }
-    if (destLink != null) {
-      output["destLink"] = destLink;
-    }
-    if (imageLink != null) {
-      output["imageLink"] = imageLink;
-    }
-    if (name != null) {
-      output["name"] = name;
-    }
-    if (product != null) {
-      output["product"] = product.toJson();
-    }
-    if (type != null) {
-      output["type"] = type;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ProductsPromotions */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-class ProductsPromotionsCustomFields {
-
-  /** Name of field. */
-  core.String name;
-
-  /** Value of field. */
-  core.String value;
-
-  /** Create new ProductsPromotionsCustomFields from JSON data */
-  ProductsPromotionsCustomFields.fromJson(core.Map json) {
-    if (json.containsKey("name")) {
-      name = json["name"];
-    }
-    if (json.containsKey("value")) {
-      value = json["value"];
-    }
-  }
-
-  /** Create JSON Object for ProductsPromotionsCustomFields */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (name != null) {
-      output["name"] = name;
-    }
-    if (value != null) {
-      output["value"] = value;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ProductsPromotionsCustomFields */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
 class ShoppingModelCategoryJsonV1 {
 
   /** Id of category. */
@@ -767,10 +722,7 @@ class ShoppingModelCategoryJsonV1 {
       id = json["id"];
     }
     if (json.containsKey("parents")) {
-      parents = [];
-      json["parents"].forEach((item) {
-        parents.add(item);
-      });
+      parents = json["parents"].toList();
     }
     if (json.containsKey("shortName")) {
       shortName = json["shortName"];
@@ -788,10 +740,7 @@ class ShoppingModelCategoryJsonV1 {
       output["id"] = id;
     }
     if (parents != null) {
-      output["parents"] = new core.List();
-      parents.forEach((item) {
-        output["parents"].add(item);
-      });
+      output["parents"] = parents.toList();
     }
     if (shortName != null) {
       output["shortName"] = shortName;
@@ -840,17 +789,10 @@ class ShoppingModelDebugJsonV1 {
   /** Create new ShoppingModelDebugJsonV1 from JSON data */
   ShoppingModelDebugJsonV1.fromJson(core.Map json) {
     if (json.containsKey("backendTimes")) {
-      backendTimes = [];
-      json["backendTimes"].forEach((item) {
-        backendTimes.add(new ShoppingModelDebugJsonV1BackendTimes.fromJson(item));
-      });
+      backendTimes = json["backendTimes"].map((backendTimesItem) => new ShoppingModelDebugJsonV1BackendTimes.fromJson(backendTimesItem)).toList();
     }
     if (json.containsKey("elapsedMillis")) {
-      if(json["elapsedMillis"] is core.String){
-        elapsedMillis = core.int.parse(json["elapsedMillis"]);
-      }else{
-        elapsedMillis = json["elapsedMillis"];
-      }
+      elapsedMillis = (json["elapsedMillis"] is core.String) ? core.int.parse(json["elapsedMillis"]) : json["elapsedMillis"];
     }
     if (json.containsKey("facetsRequest")) {
       facetsRequest = json["facetsRequest"];
@@ -880,10 +822,7 @@ class ShoppingModelDebugJsonV1 {
     var output = new core.Map();
 
     if (backendTimes != null) {
-      output["backendTimes"] = new core.List();
-      backendTimes.forEach((item) {
-        output["backendTimes"].add(item.toJson());
-      });
+      output["backendTimes"] = backendTimes.map((backendTimesItem) => backendTimesItem.toJson()).toList();
     }
     if (elapsedMillis != null) {
       output["elapsedMillis"] = elapsedMillis;
@@ -935,11 +874,7 @@ class ShoppingModelDebugJsonV1BackendTimes {
   /** Create new ShoppingModelDebugJsonV1BackendTimes from JSON data */
   ShoppingModelDebugJsonV1BackendTimes.fromJson(core.Map json) {
     if (json.containsKey("elapsedMillis")) {
-      if(json["elapsedMillis"] is core.String){
-        elapsedMillis = core.int.parse(json["elapsedMillis"]);
-      }else{
-        elapsedMillis = json["elapsedMillis"];
-      }
+      elapsedMillis = (json["elapsedMillis"] is core.String) ? core.int.parse(json["elapsedMillis"]) : json["elapsedMillis"];
     }
     if (json.containsKey("hostName")) {
       hostName = json["hostName"];
@@ -948,11 +883,7 @@ class ShoppingModelDebugJsonV1BackendTimes {
       name = json["name"];
     }
     if (json.containsKey("serverMillis")) {
-      if(json["serverMillis"] is core.String){
-        serverMillis = core.int.parse(json["serverMillis"]);
-      }else{
-        serverMillis = json["serverMillis"];
-      }
+      serverMillis = (json["serverMillis"] is core.String) ? core.int.parse(json["serverMillis"]) : json["serverMillis"];
     }
   }
 
@@ -982,6 +913,7 @@ class ShoppingModelDebugJsonV1BackendTimes {
 }
 
 class ShoppingModelExtrasJsonV1 {
+
   core.List<ShoppingModelExtrasJsonV1FacetRules> facetRules;
 
   /** Names of boost (ranking) rules applicable to this search. */
@@ -990,16 +922,10 @@ class ShoppingModelExtrasJsonV1 {
   /** Create new ShoppingModelExtrasJsonV1 from JSON data */
   ShoppingModelExtrasJsonV1.fromJson(core.Map json) {
     if (json.containsKey("facetRules")) {
-      facetRules = [];
-      json["facetRules"].forEach((item) {
-        facetRules.add(new ShoppingModelExtrasJsonV1FacetRules.fromJson(item));
-      });
+      facetRules = json["facetRules"].map((facetRulesItem) => new ShoppingModelExtrasJsonV1FacetRules.fromJson(facetRulesItem)).toList();
     }
     if (json.containsKey("rankingRules")) {
-      rankingRules = [];
-      json["rankingRules"].forEach((item) {
-        rankingRules.add(new ShoppingModelExtrasJsonV1RankingRules.fromJson(item));
-      });
+      rankingRules = json["rankingRules"].map((rankingRulesItem) => new ShoppingModelExtrasJsonV1RankingRules.fromJson(rankingRulesItem)).toList();
     }
   }
 
@@ -1008,16 +934,10 @@ class ShoppingModelExtrasJsonV1 {
     var output = new core.Map();
 
     if (facetRules != null) {
-      output["facetRules"] = new core.List();
-      facetRules.forEach((item) {
-        output["facetRules"].add(item.toJson());
-      });
+      output["facetRules"] = facetRules.map((facetRulesItem) => facetRulesItem.toJson()).toList();
     }
     if (rankingRules != null) {
-      output["rankingRules"] = new core.List();
-      rankingRules.forEach((item) {
-        output["rankingRules"].add(item.toJson());
-      });
+      output["rankingRules"] = rankingRules.map((rankingRulesItem) => rankingRulesItem.toJson()).toList();
     }
 
     return output;
@@ -1029,6 +949,7 @@ class ShoppingModelExtrasJsonV1 {
 }
 
 class ShoppingModelExtrasJsonV1FacetRules {
+
   core.String name;
 
   /** Create new ShoppingModelExtrasJsonV1FacetRules from JSON data */
@@ -1055,6 +976,7 @@ class ShoppingModelExtrasJsonV1FacetRules {
 }
 
 class ShoppingModelExtrasJsonV1RankingRules {
+
   core.String name;
 
   /** Create new ShoppingModelExtrasJsonV1RankingRules from JSON data */
@@ -1193,10 +1115,7 @@ class ShoppingModelProductJsonV1 {
   /** Create new ShoppingModelProductJsonV1 from JSON data */
   ShoppingModelProductJsonV1.fromJson(core.Map json) {
     if (json.containsKey("attributes")) {
-      attributes = [];
-      json["attributes"].forEach((item) {
-        attributes.add(new ShoppingModelProductJsonV1Attributes.fromJson(item));
-      });
+      attributes = json["attributes"].map((attributesItem) => new ShoppingModelProductJsonV1Attributes.fromJson(attributesItem)).toList();
     }
     if (json.containsKey("author")) {
       author = new ShoppingModelProductJsonV1Author.fromJson(json["author"]);
@@ -1205,10 +1124,7 @@ class ShoppingModelProductJsonV1 {
       brand = json["brand"];
     }
     if (json.containsKey("categories")) {
-      categories = [];
-      json["categories"].forEach((item) {
-        categories.add(item);
-      });
+      categories = json["categories"].toList();
     }
     if (json.containsKey("condition")) {
       condition = json["condition"];
@@ -1229,28 +1145,16 @@ class ShoppingModelProductJsonV1 {
       gtin = json["gtin"];
     }
     if (json.containsKey("gtins")) {
-      gtins = [];
-      json["gtins"].forEach((item) {
-        gtins.add(item);
-      });
+      gtins = json["gtins"].toList();
     }
     if (json.containsKey("images")) {
-      images = [];
-      json["images"].forEach((item) {
-        images.add(new ShoppingModelProductJsonV1Images.fromJson(item));
-      });
+      images = json["images"].map((imagesItem) => new ShoppingModelProductJsonV1Images.fromJson(imagesItem)).toList();
     }
     if (json.containsKey("internal1")) {
-      internal1 = [];
-      json["internal1"].forEach((item) {
-        internal1.add(item);
-      });
+      internal1 = json["internal1"].toList();
     }
     if (json.containsKey("internal10")) {
-      internal10 = [];
-      json["internal10"].forEach((item) {
-        internal10.add(item);
-      });
+      internal10 = json["internal10"].toList();
     }
     if (json.containsKey("internal12")) {
       internal12 = json["internal12"];
@@ -1271,10 +1175,7 @@ class ShoppingModelProductJsonV1 {
       internal3 = json["internal3"];
     }
     if (json.containsKey("internal4")) {
-      internal4 = [];
-      json["internal4"].forEach((item) {
-        internal4.add(new ShoppingModelProductJsonV1Internal4.fromJson(item));
-      });
+      internal4 = json["internal4"].map((internal4Item) => new ShoppingModelProductJsonV1Internal4.fromJson(internal4Item)).toList();
     }
     if (json.containsKey("internal6")) {
       internal6 = json["internal6"];
@@ -1283,16 +1184,10 @@ class ShoppingModelProductJsonV1 {
       internal7 = json["internal7"];
     }
     if (json.containsKey("internal8")) {
-      internal8 = [];
-      json["internal8"].forEach((item) {
-        internal8.add(item);
-      });
+      internal8 = json["internal8"].toList();
     }
     if (json.containsKey("inventories")) {
-      inventories = [];
-      json["inventories"].forEach((item) {
-        inventories.add(new ShoppingModelProductJsonV1Inventories.fromJson(item));
-      });
+      inventories = json["inventories"].map((inventoriesItem) => new ShoppingModelProductJsonV1Inventories.fromJson(inventoriesItem)).toList();
     }
     if (json.containsKey("language")) {
       language = json["language"];
@@ -1304,10 +1199,7 @@ class ShoppingModelProductJsonV1 {
       modificationTime = json["modificationTime"];
     }
     if (json.containsKey("mpns")) {
-      mpns = [];
-      json["mpns"].forEach((item) {
-        mpns.add(item);
-      });
+      mpns = json["mpns"].toList();
     }
     if (json.containsKey("plusOne")) {
       plusOne = json["plusOne"];
@@ -1328,10 +1220,7 @@ class ShoppingModelProductJsonV1 {
       totalMatchingVariants = json["totalMatchingVariants"];
     }
     if (json.containsKey("variants")) {
-      variants = [];
-      json["variants"].forEach((item) {
-        variants.add(new ShoppingModelProductJsonV1Variants.fromJson(item));
-      });
+      variants = json["variants"].map((variantsItem) => new ShoppingModelProductJsonV1Variants.fromJson(variantsItem)).toList();
     }
   }
 
@@ -1340,10 +1229,7 @@ class ShoppingModelProductJsonV1 {
     var output = new core.Map();
 
     if (attributes != null) {
-      output["attributes"] = new core.List();
-      attributes.forEach((item) {
-        output["attributes"].add(item.toJson());
-      });
+      output["attributes"] = attributes.map((attributesItem) => attributesItem.toJson()).toList();
     }
     if (author != null) {
       output["author"] = author.toJson();
@@ -1352,10 +1238,7 @@ class ShoppingModelProductJsonV1 {
       output["brand"] = brand;
     }
     if (categories != null) {
-      output["categories"] = new core.List();
-      categories.forEach((item) {
-        output["categories"].add(item);
-      });
+      output["categories"] = categories.toList();
     }
     if (condition != null) {
       output["condition"] = condition;
@@ -1376,28 +1259,16 @@ class ShoppingModelProductJsonV1 {
       output["gtin"] = gtin;
     }
     if (gtins != null) {
-      output["gtins"] = new core.List();
-      gtins.forEach((item) {
-        output["gtins"].add(item);
-      });
+      output["gtins"] = gtins.toList();
     }
     if (images != null) {
-      output["images"] = new core.List();
-      images.forEach((item) {
-        output["images"].add(item.toJson());
-      });
+      output["images"] = images.map((imagesItem) => imagesItem.toJson()).toList();
     }
     if (internal1 != null) {
-      output["internal1"] = new core.List();
-      internal1.forEach((item) {
-        output["internal1"].add(item);
-      });
+      output["internal1"] = internal1.toList();
     }
     if (internal10 != null) {
-      output["internal10"] = new core.List();
-      internal10.forEach((item) {
-        output["internal10"].add(item);
-      });
+      output["internal10"] = internal10.toList();
     }
     if (internal12 != null) {
       output["internal12"] = internal12;
@@ -1418,10 +1289,7 @@ class ShoppingModelProductJsonV1 {
       output["internal3"] = internal3;
     }
     if (internal4 != null) {
-      output["internal4"] = new core.List();
-      internal4.forEach((item) {
-        output["internal4"].add(item.toJson());
-      });
+      output["internal4"] = internal4.map((internal4Item) => internal4Item.toJson()).toList();
     }
     if (internal6 != null) {
       output["internal6"] = internal6;
@@ -1430,16 +1298,10 @@ class ShoppingModelProductJsonV1 {
       output["internal7"] = internal7;
     }
     if (internal8 != null) {
-      output["internal8"] = new core.List();
-      internal8.forEach((item) {
-        output["internal8"].add(item);
-      });
+      output["internal8"] = internal8.toList();
     }
     if (inventories != null) {
-      output["inventories"] = new core.List();
-      inventories.forEach((item) {
-        output["inventories"].add(item.toJson());
-      });
+      output["inventories"] = inventories.map((inventoriesItem) => inventoriesItem.toJson()).toList();
     }
     if (language != null) {
       output["language"] = language;
@@ -1451,10 +1313,7 @@ class ShoppingModelProductJsonV1 {
       output["modificationTime"] = modificationTime;
     }
     if (mpns != null) {
-      output["mpns"] = new core.List();
-      mpns.forEach((item) {
-        output["mpns"].add(item);
-      });
+      output["mpns"] = mpns.toList();
     }
     if (plusOne != null) {
       output["plusOne"] = plusOne;
@@ -1475,16 +1334,77 @@ class ShoppingModelProductJsonV1 {
       output["totalMatchingVariants"] = totalMatchingVariants;
     }
     if (variants != null) {
-      output["variants"] = new core.List();
-      variants.forEach((item) {
-        output["variants"].add(item.toJson());
-      });
+      output["variants"] = variants.map((variantsItem) => variantsItem.toJson()).toList();
     }
 
     return output;
   }
 
   /** Return String representation of ShoppingModelProductJsonV1 */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ShoppingModelProductJsonV1Attributes {
+
+  /** Display Name of prodct attribute. */
+  core.String displayName;
+
+  /** Name of product attribute. */
+  core.String name;
+
+  /** Type of product attribute (one of: text, bool, int, float, dateRange, url). */
+  core.String type;
+
+  /** Unit of product attribute. */
+  core.String unit;
+
+  /** Value of product attribute. */
+  core.Object value;
+
+  /** Create new ShoppingModelProductJsonV1Attributes from JSON data */
+  ShoppingModelProductJsonV1Attributes.fromJson(core.Map json) {
+    if (json.containsKey("displayName")) {
+      displayName = json["displayName"];
+    }
+    if (json.containsKey("name")) {
+      name = json["name"];
+    }
+    if (json.containsKey("type")) {
+      type = json["type"];
+    }
+    if (json.containsKey("unit")) {
+      unit = json["unit"];
+    }
+    if (json.containsKey("value")) {
+      value = json["value"];
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1Attributes */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (displayName != null) {
+      output["displayName"] = displayName;
+    }
+    if (name != null) {
+      output["name"] = name;
+    }
+    if (type != null) {
+      output["type"] = type;
+    }
+    if (unit != null) {
+      output["unit"] = unit;
+    }
+    if (value != null) {
+      output["value"] = value;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1Attributes */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -1523,6 +1443,187 @@ class ShoppingModelProductJsonV1Author {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Author */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ShoppingModelProductJsonV1Images {
+
+  /** Link to product image. */
+  core.String link;
+
+  core.String status;
+
+  /** Thumbnails of product image. */
+  core.List<ShoppingModelProductJsonV1ImagesThumbnails> thumbnails;
+
+  /** Create new ShoppingModelProductJsonV1Images from JSON data */
+  ShoppingModelProductJsonV1Images.fromJson(core.Map json) {
+    if (json.containsKey("link")) {
+      link = json["link"];
+    }
+    if (json.containsKey("status")) {
+      status = json["status"];
+    }
+    if (json.containsKey("thumbnails")) {
+      thumbnails = json["thumbnails"].map((thumbnailsItem) => new ShoppingModelProductJsonV1ImagesThumbnails.fromJson(thumbnailsItem)).toList();
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1Images */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (link != null) {
+      output["link"] = link;
+    }
+    if (status != null) {
+      output["status"] = status;
+    }
+    if (thumbnails != null) {
+      output["thumbnails"] = thumbnails.map((thumbnailsItem) => thumbnailsItem.toJson()).toList();
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1Images */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ShoppingModelProductJsonV1ImagesThumbnails {
+
+  /** Content of thumbnail (only available for the first thumbnail of the top results if SAYT is enabled). */
+  core.String content;
+
+  /** Height of thumbnail (omitted if not specified in the request). */
+  core.int height;
+
+  /** Link to thumbnail. */
+  core.String link;
+
+  /** Width of thumbnail (omitted if not specified in the request). */
+  core.int width;
+
+  /** Create new ShoppingModelProductJsonV1ImagesThumbnails from JSON data */
+  ShoppingModelProductJsonV1ImagesThumbnails.fromJson(core.Map json) {
+    if (json.containsKey("content")) {
+      content = json["content"];
+    }
+    if (json.containsKey("height")) {
+      height = json["height"];
+    }
+    if (json.containsKey("link")) {
+      link = json["link"];
+    }
+    if (json.containsKey("width")) {
+      width = json["width"];
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1ImagesThumbnails */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (content != null) {
+      output["content"] = content;
+    }
+    if (height != null) {
+      output["height"] = height;
+    }
+    if (link != null) {
+      output["link"] = link;
+    }
+    if (width != null) {
+      output["width"] = width;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1ImagesThumbnails */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+/** Google Internal. Attribute names are deliberately vague. */
+class ShoppingModelProductJsonV1Internal16 {
+
+  core.int length;
+
+  core.int number;
+
+  core.int size;
+
+  /** Create new ShoppingModelProductJsonV1Internal16 from JSON data */
+  ShoppingModelProductJsonV1Internal16.fromJson(core.Map json) {
+    if (json.containsKey("length")) {
+      length = json["length"];
+    }
+    if (json.containsKey("number")) {
+      number = json["number"];
+    }
+    if (json.containsKey("size")) {
+      size = (json["size"] is core.String) ? core.int.parse(json["size"]) : json["size"];
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1Internal16 */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (length != null) {
+      output["length"] = length;
+    }
+    if (number != null) {
+      output["number"] = number;
+    }
+    if (size != null) {
+      output["size"] = size;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1Internal16 */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+class ShoppingModelProductJsonV1Internal4 {
+
+  /** Google Internal. */
+  core.num confidence;
+
+  /** Google Internal. */
+  core.int node;
+
+  /** Create new ShoppingModelProductJsonV1Internal4 from JSON data */
+  ShoppingModelProductJsonV1Internal4.fromJson(core.Map json) {
+    if (json.containsKey("confidence")) {
+      confidence = json["confidence"];
+    }
+    if (json.containsKey("node")) {
+      node = json["node"];
+    }
+  }
+
+  /** Create JSON Object for ShoppingModelProductJsonV1Internal4 */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (confidence != null) {
+      output["confidence"] = confidence;
+    }
+    if (node != null) {
+      output["node"] = node;
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ShoppingModelProductJsonV1Internal4 */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -1709,248 +1810,6 @@ class ShoppingModelProductJsonV1Variants {
 
 }
 
-class ShoppingModelProductJsonV1Images {
-
-  /** Link to product image. */
-  core.String link;
-  core.String status;
-
-  /** Thumbnails of product image. */
-  core.List<ShoppingModelProductJsonV1ImagesThumbnails> thumbnails;
-
-  /** Create new ShoppingModelProductJsonV1Images from JSON data */
-  ShoppingModelProductJsonV1Images.fromJson(core.Map json) {
-    if (json.containsKey("link")) {
-      link = json["link"];
-    }
-    if (json.containsKey("status")) {
-      status = json["status"];
-    }
-    if (json.containsKey("thumbnails")) {
-      thumbnails = [];
-      json["thumbnails"].forEach((item) {
-        thumbnails.add(new ShoppingModelProductJsonV1ImagesThumbnails.fromJson(item));
-      });
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1Images */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (link != null) {
-      output["link"] = link;
-    }
-    if (status != null) {
-      output["status"] = status;
-    }
-    if (thumbnails != null) {
-      output["thumbnails"] = new core.List();
-      thumbnails.forEach((item) {
-        output["thumbnails"].add(item.toJson());
-      });
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1Images */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-class ShoppingModelProductJsonV1ImagesThumbnails {
-
-  /** Content of thumbnail (only available for the first thumbnail of the top results if SAYT is enabled). */
-  core.String content;
-
-  /** Height of thumbnail (omitted if not specified in the request). */
-  core.int height;
-
-  /** Link to thumbnail. */
-  core.String link;
-
-  /** Width of thumbnail (omitted if not specified in the request). */
-  core.int width;
-
-  /** Create new ShoppingModelProductJsonV1ImagesThumbnails from JSON data */
-  ShoppingModelProductJsonV1ImagesThumbnails.fromJson(core.Map json) {
-    if (json.containsKey("content")) {
-      content = json["content"];
-    }
-    if (json.containsKey("height")) {
-      height = json["height"];
-    }
-    if (json.containsKey("link")) {
-      link = json["link"];
-    }
-    if (json.containsKey("width")) {
-      width = json["width"];
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1ImagesThumbnails */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (content != null) {
-      output["content"] = content;
-    }
-    if (height != null) {
-      output["height"] = height;
-    }
-    if (link != null) {
-      output["link"] = link;
-    }
-    if (width != null) {
-      output["width"] = width;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1ImagesThumbnails */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-class ShoppingModelProductJsonV1Attributes {
-
-  /** Display Name of prodct attribute. */
-  core.String displayName;
-
-  /** Name of product attribute. */
-  core.String name;
-
-  /** Type of product attribute (one of: text, bool, int, float, dateRange, url). */
-  core.String type;
-
-  /** Unit of product attribute. */
-  core.String unit;
-
-  /** Create new ShoppingModelProductJsonV1Attributes from JSON data */
-  ShoppingModelProductJsonV1Attributes.fromJson(core.Map json) {
-    if (json.containsKey("displayName")) {
-      displayName = json["displayName"];
-    }
-    if (json.containsKey("name")) {
-      name = json["name"];
-    }
-    if (json.containsKey("type")) {
-      type = json["type"];
-    }
-    if (json.containsKey("unit")) {
-      unit = json["unit"];
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1Attributes */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (displayName != null) {
-      output["displayName"] = displayName;
-    }
-    if (name != null) {
-      output["name"] = name;
-    }
-    if (type != null) {
-      output["type"] = type;
-    }
-    if (unit != null) {
-      output["unit"] = unit;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1Attributes */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-class ShoppingModelProductJsonV1Internal4 {
-
-  /** Google Internal. */
-  core.num confidence;
-
-  /** Google Internal. */
-  core.int node;
-
-  /** Create new ShoppingModelProductJsonV1Internal4 from JSON data */
-  ShoppingModelProductJsonV1Internal4.fromJson(core.Map json) {
-    if (json.containsKey("confidence")) {
-      confidence = json["confidence"];
-    }
-    if (json.containsKey("node")) {
-      node = json["node"];
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1Internal4 */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (confidence != null) {
-      output["confidence"] = confidence;
-    }
-    if (node != null) {
-      output["node"] = node;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1Internal4 */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
-/** Google Internal. Attribute names are deliberately vague. */
-class ShoppingModelProductJsonV1Internal16 {
-  core.int length;
-  core.int number;
-  core.int size;
-
-  /** Create new ShoppingModelProductJsonV1Internal16 from JSON data */
-  ShoppingModelProductJsonV1Internal16.fromJson(core.Map json) {
-    if (json.containsKey("length")) {
-      length = json["length"];
-    }
-    if (json.containsKey("number")) {
-      number = json["number"];
-    }
-    if (json.containsKey("size")) {
-      if(json["size"] is core.String){
-        size = core.int.parse(json["size"]);
-      }else{
-        size = json["size"];
-      }
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1Internal16 */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (length != null) {
-      output["length"] = length;
-    }
-    if (number != null) {
-      output["number"] = number;
-    }
-    if (size != null) {
-      output["size"] = size;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1Internal16 */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
 class ShoppingModelRecommendationsJsonV1 {
 
   /** List of recommendations. */
@@ -1962,10 +1821,7 @@ class ShoppingModelRecommendationsJsonV1 {
   /** Create new ShoppingModelRecommendationsJsonV1 from JSON data */
   ShoppingModelRecommendationsJsonV1.fromJson(core.Map json) {
     if (json.containsKey("recommendationList")) {
-      recommendationList = [];
-      json["recommendationList"].forEach((item) {
-        recommendationList.add(new ShoppingModelRecommendationsJsonV1RecommendationList.fromJson(item));
-      });
+      recommendationList = json["recommendationList"].map((recommendationListItem) => new ShoppingModelRecommendationsJsonV1RecommendationList.fromJson(recommendationListItem)).toList();
     }
     if (json.containsKey("type")) {
       type = json["type"];
@@ -1977,10 +1833,7 @@ class ShoppingModelRecommendationsJsonV1 {
     var output = new core.Map();
 
     if (recommendationList != null) {
-      output["recommendationList"] = new core.List();
-      recommendationList.forEach((item) {
-        output["recommendationList"].add(item.toJson());
-      });
+      output["recommendationList"] = recommendationList.map((recommendationListItem) => recommendationListItem.toJson()).toList();
     }
     if (type != null) {
       output["type"] = type;
@@ -2022,3 +1875,16 @@ class ShoppingModelRecommendationsJsonV1RecommendationList {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}
