@@ -87,7 +87,7 @@ class Product {
   }
 
   /** Return String representation of Product */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -304,7 +304,7 @@ class Products {
   }
 
   /** Return String representation of Products */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -386,7 +386,7 @@ class ProductsFacets {
   }
 
   /** Return String representation of ProductsFacets */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -459,7 +459,7 @@ class ProductsFacetsBuckets {
   }
 
   /** Return String representation of ProductsFacetsBuckets */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -550,7 +550,7 @@ class ProductsPromotions {
   }
 
   /** Return String representation of ProductsPromotions */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -587,7 +587,7 @@ class ProductsPromotionsCustomFields {
   }
 
   /** Return String representation of ProductsPromotionsCustomFields */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -616,7 +616,7 @@ class ProductsSpelling {
   }
 
   /** Return String representation of ProductsSpelling */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -698,7 +698,7 @@ class ProductsStores {
   }
 
   /** Return String representation of ProductsStores */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -753,7 +753,7 @@ class ShoppingModelCategoryJsonV1 {
   }
 
   /** Return String representation of ShoppingModelCategoryJsonV1 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -853,7 +853,7 @@ class ShoppingModelDebugJsonV1 {
   }
 
   /** Return String representation of ShoppingModelDebugJsonV1 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -908,7 +908,7 @@ class ShoppingModelDebugJsonV1BackendTimes {
   }
 
   /** Return String representation of ShoppingModelDebugJsonV1BackendTimes */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -944,7 +944,7 @@ class ShoppingModelExtrasJsonV1 {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -971,7 +971,7 @@ class ShoppingModelExtrasJsonV1FacetRules {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1FacetRules */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -998,7 +998,7 @@ class ShoppingModelExtrasJsonV1RankingRules {
   }
 
   /** Return String representation of ShoppingModelExtrasJsonV1RankingRules */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1341,7 +1341,7 @@ class ShoppingModelProductJsonV1 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1405,7 +1405,7 @@ class ShoppingModelProductJsonV1Attributes {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Attributes */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1443,7 +1443,7 @@ class ShoppingModelProductJsonV1Author {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Author */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1488,7 +1488,7 @@ class ShoppingModelProductJsonV1Images {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Images */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1543,7 +1543,7 @@ class ShoppingModelProductJsonV1ImagesThumbnails {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1ImagesThumbnails */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1587,7 +1587,7 @@ class ShoppingModelProductJsonV1Internal16 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal16 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1624,7 +1624,7 @@ class ShoppingModelProductJsonV1Internal4 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal4 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1778,7 +1778,7 @@ class ShoppingModelProductJsonV1Inventories {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Inventories */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1806,7 +1806,7 @@ class ShoppingModelProductJsonV1Variants {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Variants */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1815,7 +1815,7 @@ class ShoppingModelRecommendationsJsonV1 {
   /** List of recommendations. */
   core.List<ShoppingModelRecommendationsJsonV1RecommendationList> recommendationList;
 
-  /** Type of recommendation list (for offer-based recommendations, one of: all, purchaseToPurchase, visitToVisit, visitToPurchase, relatedItems; for category-based recommendations, one of: all, categoryMostVisited, categoryBestSeller). */
+  /** Type of recommendation list (for offer-based recommendations, one of: all, purchaseToPurchase, visitToVisit, visitToPurchase, relatedItems, visuallySimilarItems; for category-based recommendations, one of: all, categoryMostVisited, categoryBestSeller). */
   core.String type;
 
   /** Create new ShoppingModelRecommendationsJsonV1 from JSON data */
@@ -1843,7 +1843,7 @@ class ShoppingModelRecommendationsJsonV1 {
   }
 
   /** Return String representation of ShoppingModelRecommendationsJsonV1 */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1871,7 +1871,7 @@ class ShoppingModelRecommendationsJsonV1RecommendationList {
   }
 
   /** Return String representation of ShoppingModelRecommendationsJsonV1RecommendationList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
