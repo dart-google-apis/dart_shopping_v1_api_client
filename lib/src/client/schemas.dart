@@ -138,9 +138,6 @@ class Products {
   /** Redirects. */
   core.List<core.String> redirects;
 
-  /** Related queries. */
-  core.List<core.String> relatedQueries;
-
   /** Unique identifier for this request. */
   core.String requestId;
 
@@ -205,9 +202,6 @@ class Products {
     }
     if (json.containsKey("redirects")) {
       redirects = json["redirects"].toList();
-    }
-    if (json.containsKey("relatedQueries")) {
-      relatedQueries = json["relatedQueries"].toList();
     }
     if (json.containsKey("requestId")) {
       requestId = json["requestId"];
@@ -277,9 +271,6 @@ class Products {
     }
     if (redirects != null) {
       output["redirects"] = redirects.toList();
-    }
-    if (relatedQueries != null) {
-      output["relatedQueries"] = relatedQueries.toList();
     }
     if (requestId != null) {
       output["requestId"] = requestId;

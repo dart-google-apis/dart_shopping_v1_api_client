@@ -151,10 +151,6 @@ class ProductsResource_ {
    *
    * [redirects_useGcsConfig] - Whether to return redirect information as configured in the GCS account
    *
-   * [relatedQueries_enabled] - Whether to return related queries
-   *
-   * [relatedQueries_useGcsConfig] - This parameter is currently ignored
-   *
    * [restrictBy] - Restriction specification
    *
    * [safe] - Whether safe search is enabled. Default: true
@@ -173,7 +169,7 @@ class ProductsResource_ {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Products> list(core.String source, {core.String attributeFilter, core.String availability, core.String boostBy, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String categoryRecommendations_category, core.bool categoryRecommendations_enabled, core.String categoryRecommendations_include, core.bool categoryRecommendations_useGcsConfig, core.String channels, core.bool clickTracking, core.String country, core.String crowdBy, core.String currency, core.bool extras_enabled, core.String extras_info, core.String facets_discover, core.bool facets_enabled, core.String facets_include, core.bool facets_includeEmptyBuckets, core.bool facets_useGcsConfig, core.String language, core.String location, core.int maxResults, core.int maxVariants, core.bool promotions_enabled, core.bool promotions_useGcsConfig, core.String q, core.String rankBy, core.bool redirects_enabled, core.bool redirects_useGcsConfig, core.bool relatedQueries_enabled, core.bool relatedQueries_useGcsConfig, core.String restrictBy, core.bool safe, core.bool spelling_enabled, core.bool spelling_useGcsConfig, core.int startIndex, core.String taxonomy, core.String thumbnails, core.String useCase, core.Map optParams}) {
+  async.Future<Products> list(core.String source, {core.String attributeFilter, core.String availability, core.String boostBy, core.bool categories_enabled, core.String categories_include, core.bool categories_useGcsConfig, core.String categoryRecommendations_category, core.bool categoryRecommendations_enabled, core.String categoryRecommendations_include, core.bool categoryRecommendations_useGcsConfig, core.String channels, core.bool clickTracking, core.String country, core.String crowdBy, core.String currency, core.bool extras_enabled, core.String extras_info, core.String facets_discover, core.bool facets_enabled, core.String facets_include, core.bool facets_includeEmptyBuckets, core.bool facets_useGcsConfig, core.String language, core.String location, core.int maxResults, core.int maxVariants, core.bool promotions_enabled, core.bool promotions_useGcsConfig, core.String q, core.String rankBy, core.bool redirects_enabled, core.bool redirects_useGcsConfig, core.String restrictBy, core.bool safe, core.bool spelling_enabled, core.bool spelling_useGcsConfig, core.int startIndex, core.String taxonomy, core.String thumbnails, core.String useCase, core.Map optParams}) {
     var url = "{source}/products";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -211,8 +207,6 @@ class ProductsResource_ {
     if (rankBy != null) queryParams["rankBy"] = rankBy;
     if (redirects_enabled != null) queryParams["redirects.enabled"] = redirects_enabled;
     if (redirects_useGcsConfig != null) queryParams["redirects.useGcsConfig"] = redirects_useGcsConfig;
-    if (relatedQueries_enabled != null) queryParams["relatedQueries.enabled"] = relatedQueries_enabled;
-    if (relatedQueries_useGcsConfig != null) queryParams["relatedQueries.useGcsConfig"] = relatedQueries_useGcsConfig;
     if (restrictBy != null) queryParams["restrictBy"] = restrictBy;
     if (safe != null) queryParams["safe"] = safe;
     if (source == null) paramErrors.add("source is required");
