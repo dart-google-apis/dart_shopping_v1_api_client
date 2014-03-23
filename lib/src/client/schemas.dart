@@ -1031,41 +1031,8 @@ class ShoppingModelProductJsonV1 {
   /** Images of product. */
   core.List<ShoppingModelProductJsonV1Images> images;
 
-  /** Google Internal. */
-  core.List<core.String> internal1;
-
-  /** Google Internal. */
-  core.List<core.String> internal10;
-
-  /** Google Internal. */
-  core.String internal12;
-
-  /** Google Internal. */
-  core.num internal13;
-
-  /** Google Internal. */
-  core.num internal14;
-
-  /** Google Internal. */
-  core.num internal15;
-
   /** Google Internal. Attribute names are deliberately vague. */
   ShoppingModelProductJsonV1Internal16 internal16;
-
-  /** Google Internal. */
-  core.String internal3;
-
-  /** Google Internal. */
-  core.List<ShoppingModelProductJsonV1Internal4> internal4;
-
-  /** Google Internal. */
-  core.String internal6;
-
-  /** Google Internal. */
-  core.bool internal7;
-
-  /** Google Internal. */
-  core.List<core.String> internal8;
 
   /** Inventories of product. */
   core.List<ShoppingModelProductJsonV1Inventories> inventories;
@@ -1081,9 +1048,6 @@ class ShoppingModelProductJsonV1 {
 
   /** List of all the product's MPNs. */
   core.List<core.String> mpns;
-
-  /** Code to add to the page to render the +1 content. */
-  core.String plusOne;
 
   /** Merchant-provided id of product (available only with a cx source). */
   core.String providedId;
@@ -1141,41 +1105,8 @@ class ShoppingModelProductJsonV1 {
     if (json.containsKey("images")) {
       images = json["images"].map((imagesItem) => new ShoppingModelProductJsonV1Images.fromJson(imagesItem)).toList();
     }
-    if (json.containsKey("internal1")) {
-      internal1 = json["internal1"].toList();
-    }
-    if (json.containsKey("internal10")) {
-      internal10 = json["internal10"].toList();
-    }
-    if (json.containsKey("internal12")) {
-      internal12 = json["internal12"];
-    }
-    if (json.containsKey("internal13")) {
-      internal13 = json["internal13"];
-    }
-    if (json.containsKey("internal14")) {
-      internal14 = json["internal14"];
-    }
-    if (json.containsKey("internal15")) {
-      internal15 = json["internal15"];
-    }
     if (json.containsKey("internal16")) {
       internal16 = new ShoppingModelProductJsonV1Internal16.fromJson(json["internal16"]);
-    }
-    if (json.containsKey("internal3")) {
-      internal3 = json["internal3"];
-    }
-    if (json.containsKey("internal4")) {
-      internal4 = json["internal4"].map((internal4Item) => new ShoppingModelProductJsonV1Internal4.fromJson(internal4Item)).toList();
-    }
-    if (json.containsKey("internal6")) {
-      internal6 = json["internal6"];
-    }
-    if (json.containsKey("internal7")) {
-      internal7 = json["internal7"];
-    }
-    if (json.containsKey("internal8")) {
-      internal8 = json["internal8"].toList();
     }
     if (json.containsKey("inventories")) {
       inventories = json["inventories"].map((inventoriesItem) => new ShoppingModelProductJsonV1Inventories.fromJson(inventoriesItem)).toList();
@@ -1191,9 +1122,6 @@ class ShoppingModelProductJsonV1 {
     }
     if (json.containsKey("mpns")) {
       mpns = json["mpns"].toList();
-    }
-    if (json.containsKey("plusOne")) {
-      plusOne = json["plusOne"];
     }
     if (json.containsKey("providedId")) {
       providedId = json["providedId"];
@@ -1255,41 +1183,8 @@ class ShoppingModelProductJsonV1 {
     if (images != null) {
       output["images"] = images.map((imagesItem) => imagesItem.toJson()).toList();
     }
-    if (internal1 != null) {
-      output["internal1"] = internal1.toList();
-    }
-    if (internal10 != null) {
-      output["internal10"] = internal10.toList();
-    }
-    if (internal12 != null) {
-      output["internal12"] = internal12;
-    }
-    if (internal13 != null) {
-      output["internal13"] = internal13;
-    }
-    if (internal14 != null) {
-      output["internal14"] = internal14;
-    }
-    if (internal15 != null) {
-      output["internal15"] = internal15;
-    }
     if (internal16 != null) {
       output["internal16"] = internal16.toJson();
-    }
-    if (internal3 != null) {
-      output["internal3"] = internal3;
-    }
-    if (internal4 != null) {
-      output["internal4"] = internal4.map((internal4Item) => internal4Item.toJson()).toList();
-    }
-    if (internal6 != null) {
-      output["internal6"] = internal6;
-    }
-    if (internal7 != null) {
-      output["internal7"] = internal7;
-    }
-    if (internal8 != null) {
-      output["internal8"] = internal8.toList();
     }
     if (inventories != null) {
       output["inventories"] = inventories.map((inventoriesItem) => inventoriesItem.toJson()).toList();
@@ -1305,9 +1200,6 @@ class ShoppingModelProductJsonV1 {
     }
     if (mpns != null) {
       output["mpns"] = mpns.toList();
-    }
-    if (plusOne != null) {
-      output["plusOne"] = plusOne;
     }
     if (providedId != null) {
       output["providedId"] = providedId;
@@ -1578,43 +1470,6 @@ class ShoppingModelProductJsonV1Internal16 {
   }
 
   /** Return String representation of ShoppingModelProductJsonV1Internal16 */
-  core.String toString() => JSON.encode(this.toJson());
-
-}
-
-class ShoppingModelProductJsonV1Internal4 {
-
-  /** Google Internal. */
-  core.num confidence;
-
-  /** Google Internal. */
-  core.int node;
-
-  /** Create new ShoppingModelProductJsonV1Internal4 from JSON data */
-  ShoppingModelProductJsonV1Internal4.fromJson(core.Map json) {
-    if (json.containsKey("confidence")) {
-      confidence = json["confidence"];
-    }
-    if (json.containsKey("node")) {
-      node = json["node"];
-    }
-  }
-
-  /** Create JSON Object for ShoppingModelProductJsonV1Internal4 */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (confidence != null) {
-      output["confidence"] = confidence;
-    }
-    if (node != null) {
-      output["node"] = node;
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ShoppingModelProductJsonV1Internal4 */
   core.String toString() => JSON.encode(this.toJson());
 
 }
